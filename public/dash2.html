@@ -1,0 +1,2389 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GE DATA</title>
+
+<link rel="stylesheet" href="dash2.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ================= HOME ================= -->
+
+<section id="homePage">
+
+<!-- HEADER -->
+
+<header class="header">
+<div class="left">
+
+
+<div>
+
+<p class="small">Good Afternoon</p>
+
+<h2>Abdullahi 👋</h2>
+
+</div>
+
+</div>
+
+<div class="notify">
+
+<i class="fa-regular fa-bell"></i>
+
+<span></span>
+
+</div>
+
+</header>
+
+
+
+
+
+<!-- BALANCE -->
+
+<section class="wallet">
+
+<div class="avatar">
+
+<i class="fa-solid fa-user"></i>
+
+</div>
+
+<p>Total Balance</p>
+
+<h1 id="balance">
+
+₦0.00
+
+</h1>
+
+<button id="toggleBalance">
+
+<i class="fa-regular fa-eye"></i>
+
+</button>
+
+</section>
+
+
+
+
+
+<!-- ACTIONS -->
+
+<section class="actions">
+
+<div class="action" id="fundWalletBtn">
+    <i class="fa-solid fa-wallet"></i>
+    <h4>Fund Wallet</h4>
+    <p>Add money instantly</p>
+</div>
+
+<div class="action">
+
+<i class="fa-solid fa-ellipsis"></i>
+
+<h4>More</h4>
+
+<p>Other services</p>
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- SERVICES -->
+
+<section class="services">
+
+<div class="title">
+
+<h3>Our Services</h3>
+
+</div>
+
+<div class="grid">
+
+<div class="item">
+
+<div class="icon">
+
+<i class="fa-solid fa-sim-card"></i>
+
+</div>
+
+<span>Data</span>
+
+</div>
+
+<div class="item">
+
+<div class="icon">
+
+<i class="fa-solid fa-phone"></i>
+
+</div>
+
+<span>Airtime</span>
+
+</div>
+
+<div class="item">
+
+<div class="icon">
+
+<i class="fa-solid fa-bolt"></i>
+
+</div>
+
+<span>Electricity</span>
+
+</div>
+
+<div class="item">
+
+<div class="icon">
+
+<i class="fa-solid fa-tv"></i>
+
+</div>
+
+<span>Cable</span>
+
+</div>
+
+<div class="item">
+
+<div class="icon">
+
+<i class="fa-solid fa-gamepad"></i>
+
+</div>
+
+<span>Betting</span>
+
+</div>
+
+<div class="item">
+
+<div class="icon">
+
+<i class="fa-solid fa-globe"></i>
+
+</div>
+
+<span>Internet</span>
+
+</div>
+
+<div class="item">
+
+<div class="icon">
+
+<i class="fa-solid fa-credit-card"></i>
+
+</div>
+
+<span>Wallet</span>
+
+</div>
+
+<div class="item">
+
+<div class="icon">
+
+<i class="fa-solid fa-clock-rotate-left"></i>
+
+</div>
+
+<span>History</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- WHATSAPP -->
+
+<section class="banner">
+
+<div>
+
+<h3>Buy On WhatsApp</h3>
+
+<p>Fast & Easy Data Purchase</p>
+
+</div>
+
+<i class="fa-brands fa-whatsapp"></i>
+
+</section>
+
+
+
+
+
+<!-- HISTORY -->
+
+<section class="history">
+
+<div class="head">
+
+<h3>Transaction History</h3>
+
+<a href="#" id="seeAllHistory">See All</a>
+
+</div>
+
+<div class="card" id="dashboardHistoryList">
+
+    <div class="historyLoading">
+        Loading transactions...
+    </div>
+
+</div>
+
+</section>
+
+</section>
+
+<!-- ================= HISTORY PAGE ================= -->
+
+<section id="historyPage" class="page" style="display:none;">
+
+    <div class="pageHeader">
+
+        <button onclick="goHome()">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <div class="pageTitle">
+            <h2>Transaction History</h2>
+            <p>View all your transactions</p>
+        </div>
+
+    </div>
+    
+    <!-- HISTORY SEARCH -->
+
+<div class="historySearchBox">
+
+    <i class="fa-solid fa-magnifying-glass"></i>
+
+    <input
+        type="tel"
+        id="historySearchInput"
+        placeholder="Search by phone number"
+        inputmode="numeric"
+        autocomplete="off"
+    >
+
+    <button
+        type="button"
+        id="clearHistorySearch"
+        aria-label="Clear search">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+
+</div>
+
+    <!-- HISTORY FILTERS -->
+
+    <div class="historyFilters">
+
+    <button class="historyFilter active" data-history-filter="all">
+        All
+    </button>
+
+    <button class="historyFilter" data-history-filter="data">
+        Data
+    </button>
+
+    <button class="historyFilter" data-history-filter="airtime">
+        Airtime
+    </button>
+
+    <button class="historyFilter" data-history-filter="pin">
+        PIN
+    </button>
+
+    <button class="historyFilter" data-history-filter="fund">
+        Fund
+    </button>
+
+</div>
+
+    <!-- TRANSACTION LIST -->
+
+    <div id="fullHistoryList" class="fullHistoryList">
+
+        <div class="historyEmpty">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+
+            <h3>No Transactions</h3>
+
+            <p>Your transactions will appear here.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= DATA PAGE ================= -->
+
+<!-- ================= BUY DATA PAGE ================= -->
+
+<section id="dataPage" class="page">
+
+    <!-- Header -->
+
+    <div class="pageHeader">
+
+        <button onclick="goHome()">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <div class="pageTitle">
+            <h2>Buy Data</h2>
+            <p>Fast & Affordable Data Subscription</p>
+        </div>
+
+        <button class="historyBtn">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+        </button>
+
+    </div>
+
+
+    <!-- Black Banner -->
+
+    <div class="blackBanner">
+
+        <div>
+
+            <h2>Buy Data Bundle</h2>
+
+            <p>Purchase data instantly at cheap prices.</p>
+
+        </div>
+
+        <div class="wifiIcon">
+
+            <i class="fa-solid fa-wifi"></i>
+
+        </div>
+
+    </div>
+
+
+    <!-- Phone Number Card -->
+
+    <div class="phoneCard">
+
+        <div class="phoneTop">
+
+            <h3>Phone Number</h3>
+
+            <button class="beneficiaryBtn">
+
+                <i class="fa-solid fa-user-group"></i>
+
+                Beneficiaries
+
+            </button>
+
+        </div>
+
+
+        <input
+        type="tel"
+        id="phoneNumber"
+        class="phoneInput"
+        maxlength="11"
+        placeholder="Enter phone number">
+        <p id="phoneError"></p>
+
+
+        <small class="phoneHint">
+
+            Enter an 11-digit Nigerian phone number.
+
+        </small>
+
+    </div>
+
+
+    <!-- Network -->
+
+    <h3 class="sectionTitle">
+
+        Select Network
+
+    </h3>
+
+    <div class="networkGrid">
+
+        <div class="networkCard" data-network="mtn">
+
+            <img src="mtn.png" alt="MTN">
+
+            <span>MTN</span>
+
+        </div>
+
+        <div class="networkCard" data-network="airtel">
+
+            <img src="airtel.png" alt="Airtel">
+
+            <span>Airtel</span>
+
+        </div>
+
+        <div class="networkCard" data-network="glo">
+
+            <img src="glo.png" alt="Glo">
+
+            <span>Glo</span>
+
+        </div>
+
+        <div class="networkCard" data-network="9mobile">
+
+            <img src="9mobile.png" alt="9mobile">
+
+            <span>9mobile</span>
+
+        </div>
+
+    </div>
+    
+
+
+
+<!-- ================= CATEGORY ================= -->
+
+<div id="categorySection" style="display:none;">
+
+    <h3 class="sectionTitle">
+
+        Select Category
+
+    </h3>
+
+    <div class="categoryGrid">
+
+    <div class="categoryCard" data-category="sme">
+        SME
+    </div>
+
+    <div class="categoryCard" data-category="corporate">
+        CORPORATE
+    </div>
+
+    <div class="categoryCard" data-category="gifting">
+        GIFTING
+    </div>
+
+   </div>
+
+</div>
+
+
+
+<!-- ================= DATA PLANS ================= -->
+
+<div id="plansSection" style="display:none;">
+
+    <h3 class="sectionTitle">
+
+        Available Data Bundles
+
+    </h3>
+
+    <div id="plansContainer">
+
+        <!-- JS zai cika wannan -->
+
+    </div>
+
+</div>
+
+<!-- ================= SAVE BENEFICIARY ================= -->
+
+<div class="saveCard">
+
+    <div class="saveLeft">
+
+        <i class="fa-solid fa-bookmark"></i>
+
+        <div>
+
+            <h4>Save as Beneficiary</h4>
+
+            <p>Save this number for future purchases</p>
+
+        </div>
+
+    </div>
+
+    <label class="switch">
+
+        <input type="checkbox" id="saveBeneficiary">
+
+        <span class="slider"></span>
+
+    </label>
+
+</div>
+
+
+<!-- ================= USSD ENQUIRY ================= -->
+
+<div class="ussdCard">
+
+    <div class="ussdLeft">
+
+        <i class="fa-solid fa-mobile-screen-button"></i>
+
+        <div>
+
+            <h4>USSD Enquiry</h4>
+
+            <p>Check balance & active bundle</p>
+
+        </div>
+
+    </div>
+
+    <button id="ussdBtn">
+
+        Check
+
+    </button>
+
+</div>
+<!-- ================= PURCHASE SUMMARY ================= -->
+
+<div id="summaryCard" class="summaryCard" style="display:none;">
+
+    <h3>Purchase Summary</h3>
+
+    <div class="summaryRow">
+        <span>Network</span>
+        <strong id="summaryNetwork">-</strong>
+    </div>
+
+    <div class="summaryRow">
+        <span>Category</span>
+        <strong id="summaryCategory">-</strong>
+    </div>
+
+    <div class="summaryRow">
+        <span>Plan</span>
+        <strong id="summaryPlan">-</strong>
+    </div>
+
+    <div class="summaryRow">
+        <span>Phone</span>
+        <strong id="summaryPhone">-</strong>
+    </div>
+
+    <div class="summaryRow total">
+        <span>Amount</span>
+        <strong id="summaryAmount">₦0</strong>
+    </div>
+
+</div>
+
+
+<!-- ================= BUY BUTTON ================= -->
+
+<button id="buyDataBtn" class="buyButton" style="display:none;">
+
+    Buy Data Bundle
+
+</button>
+
+
+<!-- ================= SUCCESS MODAL ================= -->
+
+<div id="successModal" class="successModal">
+
+    <div class="successBox">
+
+        <div class="successIcon">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+        </div>
+
+        <h2>Successful</h2>
+
+        <p>
+
+            Your data purchase has been completed successfully.
+
+        </p>
+
+        <button onclick="closeSuccess()">
+
+            Done
+
+        </button>
+
+    </div>
+
+</div>
+
+    <!-- ================= BOTTOM PAY BAR ================= -->
+
+<div id="payBar" class="payBar" style="display:none;">
+
+    <div class="payInfo">
+
+        <h2 id="payAmount">₦0.00</h2>
+
+        <span id="payPlan">No Plan Selected</span>
+
+    </div>
+
+    <button id="payNowBtn" class="payNowBtn">
+
+        Pay Now
+        <i class="fa-solid fa-arrow-right"></i>
+
+    </button>
+
+</div>
+
+
+
+<!-- ================= CONFIRM PURCHASE MODAL ================= -->
+
+<div id="confirmModal" class="confirmModal">
+
+    <div class="confirmBox">
+
+        <div class="confirmHeader">
+
+            <div>
+
+                <h2>Confirm Purchase</h2>
+
+                <p>Review your details before paying.</p>
+
+            </div>
+
+            <button id="closeConfirm">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+
+        <div class="confirmAmount">
+
+            <small>You're Paying</small>
+
+            <h1 id="confirmAmount">₦0.00</h1>
+
+            <span id="confirmPhone">08000000000</span>
+
+        </div>
+
+
+
+        <div class="confirmNetwork">
+
+            <img id="confirmLogo" src="mtn.png">
+
+            <span id="confirmNetworkName">
+
+                MTN
+
+            </span>
+
+        </div>
+
+
+
+        <div class="confirmTable">
+
+            <div>
+
+                <span>Category</span>
+
+                <strong id="confirmCategory">
+
+                    -
+
+                </strong>
+
+            </div>
+
+            <div>
+
+                <span>Plan</span>
+
+                <strong id="confirmPlan">
+
+                    -
+
+                </strong>
+
+            </div>
+
+            <div>
+
+                <span>Validity</span>
+
+                <strong id="confirmValidity">
+
+                    -
+
+                </strong>
+
+            </div>
+
+            <div>
+
+                <span>Recipient</span>
+
+                <strong id="confirmRecipient">
+
+                    -
+
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <button id="confirmPayBtn" class="confirmPayBtn">
+
+            Confirm & Pay
+
+        </button>
+
+
+
+        <button id="cancelPayBtn" class="cancelPayBtn">
+
+            Cancel
+
+        </button>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- ================= END BUY DATA PAGE ================= -->
+
+
+<!-- ============================= --><!-- PROFILE PAGE --><!-- ============================= -->
+
+
+<section id="profilePage" class="profilePage page">
+
+    <div class="profileHeader">
+
+        <button type="button" id="profileBackBtn">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <h2>Profile</h2>
+
+        <div class="profileHeaderSpace"></div>
+
+    </div>
+
+    <!-- USER INFO -->
+    <div class="profileUserCard">
+
+    <div class="profileAvatar">
+        <i class="fa-solid fa-user"></i>
+    </div>
+
+    <div class="profileUserInfo">
+        <h3 id="profileName">User</h3>
+        <p id="profileEmail">email@example.com</p>
+    </div>
+
+</div>
+
+<!-- ACCOUNT -->
+<div class="profileSectionTitle">
+    Account
+</div>
+
+<div class="profileMenu">
+
+    <button type="button" class="profileMenuItem" id="profileHistoryBtn">
+        <div class="profileMenuIcon">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+        </div>
+
+        <div class="profileMenuText">
+            <strong>Transaction History</strong>
+            <span>Review your past transactions</span>
+        </div>
+
+        <i class="fa-solid fa-chevron-right profileArrow"></i>
+    </button>
+
+
+    <button type="button" class="profileMenuItem" id="transactionPinBtn">
+    <div class="profileMenuIcon">
+        <i class="fa-solid fa-lock"></i>
+    </div>
+
+    <div class="profileMenuText">
+        <strong>Transaction PIN</strong>
+        <span>Change your 4-digit transaction PIN</span>
+    </div>
+
+    <i class="fa-solid fa-chevron-right"></i>
+</button>
+
+
+    <button type="button" class="profileMenuItem" id="profilePasswordBtn">
+        <div class="profileMenuIcon">
+            <i class="fa-solid fa-key"></i>
+        </div>
+
+        <div class="profileMenuText">
+            <strong>Change Password</strong>
+            <span>Update your login password</span>
+        </div>
+
+        <i class="fa-solid fa-chevron-right profileArrow"></i>
+    </button>
+
+
+    <button type="button" class="profileMenuItem" id="profileReferralBtn">
+        <div class="profileMenuIcon">
+            <i class="fa-solid fa-users"></i>
+        </div>
+
+        <div class="profileMenuText">
+            <strong>Refer & Earn</strong>
+            <span>Invite friends and earn rewards</span>
+        </div>
+
+        <i class="fa-solid fa-chevron-right profileArrow"></i>
+    </button>
+
+</div>
+
+
+<!-- PREFERENCES -->
+<div class="profileSectionTitle">
+    Preferences
+</div>
+
+<div class="profileMenu">
+
+    <button type="button" class="profileMenuItem" id="profileLoginPinBtn">
+    <div class="profileMenuIcon">
+        <i class="fa-solid fa-lock"></i>
+    </div>
+
+    <div class="profileMenuText">
+        <strong>Login with PIN</strong>
+        <span>Use your 4-digit PIN to login</span>
+    </div>
+
+    <label class="profileSwitch">
+        <input type="checkbox" id="loginPinToggle">
+        <span class="profileSlider"></span>
+    </label>
+</button>
+
+
+    <button type="button" class="profileMenuItem" id="profileAppearanceBtn">
+        <div class="profileMenuIcon">
+            <i class="fa-solid fa-palette"></i>
+        </div>
+
+        <div class="profileMenuText">
+            <strong>Appearance</strong>
+            <span>Customize your app appearance</span>
+        </div>
+
+        <i class="fa-solid fa-chevron-right profileArrow"></i>
+    </button>
+
+
+    <button type="button" class="profileMenuItem" id="profileSupportBtn">
+        <div class="profileMenuIcon">
+            <i class="fa-solid fa-headset"></i>
+        </div>
+
+        <div class="profileMenuText">
+            <strong>Customer Support</strong>
+            <span>Get help with your account</span>
+        </div>
+
+
+        <i class="fa-solid fa-chevron-right profileArrow"></i>
+    </button>
+
+</div>
+
+
+<!-- LOGOUT -->
+<div class="profileLogoutSection">
+
+    <button type="button" id="profileLogoutBtn">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        <span>Logout</span>
+    </button>
+
+</div>
+
+</section>
+
+<!-- APPEARANCE MODAL -->
+<div id="appearanceModal" class="appearanceModal">
+
+    <div class="appearanceBox">
+
+        <div class="appearanceHeader">
+            <h3>Appearance</h3>
+
+            <button type="button" id="closeAppearanceBtn">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <p class="appearanceSubtitle">
+            Customize your app appearance
+        </p>
+
+        <button type="button" class="appearanceOption" data-theme="light">
+            <div>
+                <strong>Light</strong>
+                <span>Use light appearance</span>
+            </div>
+
+            <i class="fa-solid fa-check appearanceCheck"></i>
+        </button>
+
+        <button type="button" class="appearanceOption" data-theme="dark">
+            <div>
+                <strong>Dark</strong>
+                <span>Use dark appearance</span>
+            </div>
+
+            <i class="fa-solid fa-check appearanceCheck"></i>
+        </button>
+
+        <button type="button" class="appearanceOption" data-theme="system">
+            <div>
+                <strong>System Default</strong>
+                <span>Follow your device settings</span>
+            </div>
+
+            <i class="fa-solid fa-check appearanceCheck"></i>
+        </button>
+
+    </div>
+
+</div>
+
+<!-- BOTTOM NAVIGATION -->
+
+<nav class="bottomNav">
+
+<div class="navItem active">
+
+<i class="fa-solid fa-house"></i>
+
+<p>Home</p>
+
+</div>
+
+<div class="navItem" id="walletNav">
+
+    <i class="fa-solid fa-wallet"></i>
+
+    <p>Wallet</p>
+
+</div>
+
+<div class="navItem">
+
+<i class="fa-solid fa-star"></i>
+
+<p>Rewards</p>
+
+</div>
+
+<div class="navItem" id="profileNav">
+
+    <i class="fa-solid fa-user"></i>
+
+    <p>Profile</p>
+
+</div>
+
+</nav>
+
+<!-- ================= AIRTIME HOME PAGE ================= -->
+
+<section id="airtimeHomePage" class="page" style="display:none;">
+
+    <!-- Header -->
+
+    <div class="pageHeader">
+
+        <button onclick="goHome()">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <div class="pageTitle">
+            <h2>Airtime</h2>
+            <p>Choose a service</p>
+        </div>
+
+    </div>
+
+    <!-- Service Cards -->
+
+    <div class="serviceCards">
+
+        <div class="serviceCard" id="buyAirtimeCard">
+
+            <div class="serviceIcon">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+            </div>
+
+            <div class="serviceText">
+                <h3>Buy Airtime</h3>
+                <p>Recharge any Nigerian network instantly.</p>
+            </div>
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+        </div>
+
+        <div class="serviceCard" id="uploadPinCard">
+
+            <div class="serviceIcon">
+                <i class="fa-solid fa-credit-card"></i>
+            </div>
+
+            <div class="serviceText">
+                <h3>Upload PIN</h3>
+                <p>Generate airtime PIN vouchers.</p>
+            </div>
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= BUY AIRTIME PAGE ================= -->
+
+<section id="buyAirtimePage" class="page" style="display:none;">
+
+<div class="pageHeader">
+
+<button onclick="goBackAirtime()">
+<i class="fa-solid fa-arrow-left"></i>
+</button>
+
+<div class="pageTitle">
+<h2>Buy Airtime</h2>
+<p>Fast & Instant Recharge</p>
+</div>
+
+<button class="historyBtn">
+    <i class="fa-solid fa-clock-rotate-left"></i>
+</button>
+
+</div>
+
+
+<div class="blackBanner">
+
+<div>
+<h2>Buy Airtime</h2>
+<p>Recharge any network instantly.</p>
+</div>
+
+<div class="wifiIcon">
+<i class="fa-solid fa-phone"></i>
+</div>
+
+</div>
+
+
+<!-- PHONE -->
+
+<div class="phoneCard">
+
+<div class="phoneTop">
+
+<h3>Phone Number</h3>
+
+<button class="beneficiaryBtn">
+<i class="fa-solid fa-user-group"></i>
+Beneficiaries
+</button>
+
+</div>
+
+
+<input 
+type="tel"
+id="airtimePhone"
+maxlength="11"
+class="phoneInput"
+placeholder="Enter phone number">
+
+
+<p id="airtimePhoneError"></p>
+
+
+<small>
+Enter an 11-digit Nigerian phone number.
+</small>
+
+
+</div>
+
+
+<h3 class="sectionTitle">
+Select Network
+</h3>
+
+
+<div class="networkGrid">
+
+
+<div class="networkCard" data-airnetwork="mtn">
+<img src="mtn.png">
+<span>MTN</span>
+</div>
+
+
+<div class="networkCard" data-airnetwork="airtel">
+<img src="airtel.png">
+<span>Airtel</span>
+</div>
+
+
+<div class="networkCard" data-airnetwork="glo">
+<img src="glo.png">
+<span>Glo</span>
+</div>
+
+
+<div class="networkCard" data-airnetwork="9mobile">
+<img src="9mobile.png">
+<span>9mobile</span>
+</div>
+
+
+</div>
+
+
+
+<!-- QUICK AMOUNT -->
+
+<h3 class="sectionTitle">
+Quick Amount
+</h3>
+
+
+<div class="quickAmount">
+
+
+<button>₦100</button>
+<button>₦200</button>
+<button>₦500</button>
+<button>₦1000</button>
+<button>₦2000</button>
+<button>₦5000</button>
+
+
+</div>
+
+
+
+<!-- INPUT AMOUNT -->
+
+
+<div class="amountCard">
+
+<h3>Enter Amount</h3>
+
+<div class="amountInput">
+
+<span>₦</span>
+
+<input 
+type="number"
+id="airtimeAmount"
+placeholder="Enter amount">
+
+</div>
+
+
+<p id="amountError"></p>
+
+</div>
+
+
+
+
+<!-- BENEFICIARY -->
+
+
+<div class="saveCard">
+
+<div class="saveLeft">
+
+<i class="fa-solid fa-bookmark"></i>
+
+
+<div>
+
+<h4>Save as Beneficiary</h4>
+
+<p>
+Save this number for future purchases
+</p>
+
+</div>
+
+</div>
+
+
+<label class="switch">
+
+<input type="checkbox">
+
+<span class="slider"></span>
+
+</label>
+
+
+</div>
+
+
+
+
+<!-- USSD -->
+
+<div class="ussdCard">
+
+
+<div class="ussdLeft">
+
+<i class="fa-solid fa-mobile-screen-button"></i>
+
+
+<div>
+
+<h4>USSD Enquiry</h4>
+
+<p>
+Check airtime balance
+</p>
+
+</div>
+
+
+</div>
+
+
+<button>
+Check
+</button>
+
+
+</div>
+
+
+
+<!-- PAY BAR -->
+
+
+<div id="airtimePayBar" class="payBar" style="display:none;">
+
+
+<div class="payInfo">
+
+<h2 id="airtimePayAmount">
+₦0.00
+</h2>
+
+
+<span>
+Airtime
+</span>
+
+
+</div>
+
+
+<button id="airtimePayNow" class="payNowBtn">
+
+Pay Now
+
+<i class="fa-solid fa-arrow-right"></i>
+
+</button>
+
+
+</div>
+
+
+
+</section>
+
+
+
+<!-- ================= UPLOAD PIN PAGE ================= -->
+
+
+<section id="uploadPinPage" class="page" style="display:none;">
+
+
+<div class="pageHeader">
+
+
+<button onclick="goBackAirtime()">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+</button>
+
+
+<div class="pageTitle">
+
+<h2>Upload PIN</h2>
+
+<p>
+Sell Airtime Voucher
+</p>
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="blackBanner">
+
+
+<div>
+
+<h2>
+Upload Airtime PIN
+</h2>
+
+
+<p>
+Generate airtime voucher
+</p>
+
+
+</div>
+
+
+<div class="wifiIcon">
+
+<i class="fa-solid fa-credit-card"></i>
+
+</div>
+
+
+</div>
+
+
+
+
+<h3 class="sectionTitle">
+Select Network
+</h3>
+
+
+
+<div class="networkGrid">
+
+
+<div class="networkCard">
+<img src="mtn.png">
+<span>MTN</span>
+</div>
+
+
+<div class="networkCard">
+<img src="airtel.png">
+<span>Airtel</span>
+</div>
+
+
+<div class="networkCard">
+<img src="glo.png">
+<span>Glo</span>
+</div>
+
+
+<div class="networkCard">
+<img src="9mobile.png">
+<span>9mobile</span>
+</div>
+
+
+</div>
+
+
+
+
+<h3 class="sectionTitle">
+Quick Amount
+</h3>
+
+
+<div class="quickAmount">
+
+<button>₦100</button>
+<button>₦200</button>
+<button>₦500</button>
+<button>₦1000</button>
+
+</div>
+
+
+
+
+<div class="amountCard">
+
+
+<h3>
+Enter Amount
+</h3>
+
+
+<div class="amountInput">
+
+<span>₦</span>
+
+<input 
+type="number"
+placeholder="Enter amount">
+
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="ussdCard">
+
+
+<div class="ussdLeft">
+
+<i class="fa-solid fa-mobile-screen-button"></i>
+
+
+<div>
+
+<h4>
+USSD Enquiry
+</h4>
+
+<p>
+Check airtime balance
+</p>
+
+</div>
+
+</div>
+
+
+<button>
+Check
+</button>
+
+
+</div>
+
+<div id="uploadPinPayBar" class="payBar" style="display:none;">
+
+    <div class="payInfo">
+        <h2 id="uploadPayAmount">₦0.00</h2>
+        <span id="uploadPayNetwork">Airtime PIN</span>
+    </div>
+
+    <button id="uploadPinPayNow" class="payNowBtn">
+        generate 
+        <i class="fa-solid fa-arrow-right"></i>
+    </button>
+
+</div>
+<!-- ================= AIRTIME CONFIRM MODAL ================= -->
+
+
+
+<!-- ================= UPLOAD PIN CONFIRM MODAL ================= -->
+
+<div id="uploadConfirmModal" class="confirmModal">
+
+
+<div class="confirmBox">
+
+
+<div class="confirmHeader">
+
+<div>
+
+<h2>Confirm Purchase</h2>
+<p>Review your details before paying.</p>
+
+</div>
+
+
+<button id="closeUploadConfirm">
+
+<i class="fa-solid fa-xmark"></i>
+
+</button>
+
+</div>
+
+
+
+
+<div class="confirmAmount">
+
+<small>
+You're Paying
+</small>
+
+
+<h1 id="uploadConfirmAmount">
+₦0.00
+</h1>
+
+
+<span>
+Airtime PIN Voucher
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="confirmNetwork">
+
+
+<img id="uploadConfirmLogo" src="mtn.png">
+
+
+<span id="uploadConfirmNetwork">
+MTN
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="confirmTable">
+
+
+<div>
+
+<span>
+Service
+</span>
+
+
+<strong>
+Upload PIN
+</strong>
+
+</div>
+
+
+
+<div>
+
+<span>
+Network
+</span>
+
+
+<strong id="uploadTableNetwork">
+-
+</strong>
+
+
+</div>
+
+
+
+
+<div>
+
+<span>
+Amount
+</span>
+
+
+<strong id="uploadTableAmount">
+-
+</strong>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<button id="confirmUploadPayBtn" class="confirmPayBtn">
+
+Confirm & Pay
+
+</button>
+
+
+
+<button id="cancelUploadPayBtn" class="cancelPayBtn">
+
+Cancel
+
+</button>
+
+
+
+</div>
+
+
+</div>
+
+
+
+</section>
+
+<div id="airtimeConfirmModal" class="confirmModal">
+
+
+<div class="confirmBox">
+
+
+<div class="confirmHeader">
+
+<div>
+
+<h2>Confirm Purchase</h2>
+
+<p>Review your details before paying.</p>
+
+</div>
+
+
+<button id="closeAirtimeConfirm">
+
+<i class="fa-solid fa-xmark"></i>
+
+</button>
+
+
+</div>
+
+
+
+<div class="confirmAmount">
+
+<small>
+You're Paying
+</small>
+
+
+<h1 id="airtimeConfirmAmount">
+₦0.00
+</h1>
+
+
+<span id="airtimeConfirmPhone">
+08000000000
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="confirmNetwork">
+
+
+<img id="airtimeConfirmLogo" src="mtn.png">
+
+
+<span id="airtimeConfirmNetwork">
+MTN
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="confirmTable">
+
+
+<div>
+
+<span>
+Service
+</span>
+
+
+<strong>
+Airtime
+</strong>
+
+</div>
+
+
+
+
+<div>
+
+<span>
+Network
+</span>
+
+
+<strong id="airtimeTableNetwork">
+-
+</strong>
+
+</div>
+
+
+
+
+<div>
+
+<span>
+Amount
+</span>
+
+
+<strong id="airtimeTableAmount">
+-
+</strong>
+
+</div>
+
+
+
+
+
+<div>
+
+<span>
+Recipient
+</span>
+
+
+<strong id="airtimeTablePhone">
+-
+</strong>
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<button id="confirmAirtimePayBtn" class="confirmPayBtn">
+
+Confirm & Pay
+
+</button>
+
+
+
+
+<button id="cancelAirtimePayBtn" class="cancelPayBtn">
+
+Cancel
+
+</button>
+
+
+
+
+</div>
+
+
+</div>
+
+<!-- ================= TRANSACTION PIN MODAL ================= -->
+
+<div id="pinModal" class="pinModal">
+
+    <div class="pinBox">
+
+        <div class="pinLogo">
+            <img src="logo.png" alt="GE DATA">
+        </div>
+
+        <h2>Enter Transaction PIN</h2>
+
+        <p>
+            Enter your 4-digit transaction PIN to authorize this payment.
+        </p>
+
+        <div class="pinInputs">
+
+            <input type="tel" inputmode="numeric" pattern="[0-9]*" maxlength="1" class="pinInput">
+<input type="tel" inputmode="numeric" pattern="[0-9]*" maxlength="1" class="pinInput">
+<input type="tel" inputmode="numeric" pattern="[0-9]*" maxlength="1" class="pinInput">
+<input type="tel" inputmode="numeric" pattern="[0-9]*" maxlength="1" class="pinInput">
+
+        </div>
+
+        <small id="pinError"></small>
+
+        <button id="cancelPinBtn" class="cancelPayBtn">
+            Cancel
+        </button>
+        
+        <button id="forgotPinBtn" class="forgotPinBtn">
+    Forgot PIN?
+</button> 
+
+    </div>
+
+</div>
+
+<!-- ================= SET TRANSACTION PIN MODAL ================= -->
+
+<div id="setPinModal" class="pinModal">
+
+    <div class="pinBox">
+
+        <div class="pinLogo">
+            <img src="logo.png" alt="GE DATA">
+        </div>
+
+        <h2>Set Transaction PIN</h2>
+
+        <p>
+            Create a 4-digit PIN to authorize your payments.
+        </p>
+
+        <div class="pinInputs setPinInputs">
+
+            <input type="tel"
+                   inputmode="numeric"
+                   pattern="[0-9]*"
+                   maxlength="1"
+                   class="setPinInput">
+
+            <input type="tel"
+                   inputmode="numeric"
+                   pattern="[0-9]*"
+                   maxlength="1"
+                   class="setPinInput">
+
+            <input type="tel"
+                   inputmode="numeric"
+                   pattern="[0-9]*"
+                   maxlength="1"
+                   class="setPinInput">
+
+            <input type="tel"
+                   inputmode="numeric"
+                   pattern="[0-9]*"
+                   maxlength="1"
+                   class="setPinInput">
+
+        </div>
+
+        <small id="setPinError"></small>
+
+        <button id="savePinBtn" class="confirmPayBtn">
+            Save PIN
+        </button>
+
+        <button id="cancelSetPinBtn" class="cancelPayBtn">
+            Cancel
+        </button>
+
+    </div>
+
+</div>
+
+<!-- ================= PROCESSING MODAL ================= -->
+
+<div id="processingModal" class="processingModal">
+
+    <div class="processingBox">
+
+        <div class="loaderRing">
+
+            <span></span>
+
+            <div class="processingLogo">
+                <img src="logo.png" alt="GE DATA">
+            </div>
+
+        </div>
+
+        <h2>Processing...</h2>
+
+        <p>Please wait while we complete your transaction.</p>
+
+    </div>
+
+</div>
+
+<!-- ================= FORGOT PIN MODAL ================= -->
+
+<div id="forgotPinModal" class="pinModal">
+
+    <div class="pinBox">
+
+        <div class="pinLogo">
+            <img src="logo.png" alt="GE DATA">
+        </div>
+
+        <h2>Forgot Transaction PIN</h2>
+
+        <p>
+            Enter your login password to reset your transaction PIN.
+        </p>
+
+        <input
+            type="password"
+            id="forgotPinPassword"
+            class="forgotPinPassword"
+            placeholder="Enter login password"
+            autocomplete="current-password"
+        >
+
+        <div class="pinInputs setPinInputs">
+
+            <input
+                type="tel"
+                inputmode="numeric"
+                maxlength="1"
+                class="forgotPinInput"
+            >
+
+            <input
+                type="tel"
+                inputmode="numeric"
+                maxlength="1"
+                class="forgotPinInput"
+            >
+
+            <input
+                type="tel"
+                inputmode="numeric"
+                maxlength="1"
+                class="forgotPinInput"
+            >
+
+            <input
+                type="tel"
+                inputmode="numeric"
+                maxlength="1"
+                class="forgotPinInput"
+            >
+
+        </div>
+
+        <small id="forgotPinError"></small>
+
+        <button id="resetPinBtn" class="confirmPayBtn">
+            Reset PIN
+        </button>
+
+        <button id="cancelForgotPinBtn" class="cancelPayBtn">
+            Cancel
+        </button>
+
+    </div>
+
+</div>
+
+<!-- AIRTIME SUCCESS MODAL -->
+<div id="airtimeSuccessModal" class="successModal">
+    <div class="successBox">
+
+        <div class="successIcon">
+            <i class="fa-solid fa-circle-check"></i>
+        </div>
+
+        <h2>Airtime Successful</h2>
+
+        <p>
+            Your airtime purchase has been completed successfully.
+        </p>
+
+        <button id="airtimeSuccessDone">
+            Done
+        </button>
+
+    </div>
+</div>
+
+<!-- AIRTIME PIN SUCCESS MODAL -->
+<div id="uploadPinSuccessModal" class="pinSuccessModal">
+
+    <div class="pinSuccessBox">
+
+        <button id="closePinSuccessModal" class="pinSuccessClose">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="pinSuccessIcon">
+            <i class="fa-solid fa-check"></i>
+        </div>
+
+        <h2>Purchase Successful</h2>
+
+        <p class="pinSuccessSubtitle">
+            Your Airtime PIN is ready to use
+        </p>
+
+        <div class="purchasedPinCard">
+
+            <span>AIRTIME PIN</span>
+
+            <strong id="purchasedPinValue">
+                000000000000
+            </strong>
+
+        </div>
+
+        <div class="pinSuccessActions">
+
+            <button id="copyPurchasedPin" class="copyPinBtn">
+                <i class="fa-solid fa-copy"></i>
+                Copy PIN
+            </button>
+
+            <button id="openPurchasedPin" class="openKeypadBtn">
+                <i class="fa-solid fa-phone"></i>
+                Open Keypad
+            </button>
+
+        </div>
+
+        <button id="donePinSuccess" class="donePinBtn">
+            Done
+        </button>
+
+    </div>
+
+</div>
+
+<!-- ================= TRANSACTION DETAILS MODAL ================= -->
+
+<div id="transactionDetailsModal" class="transactionDetailsModal">
+
+    <div class="transactionDetailsBox">
+
+        <button
+            id="closeTransactionDetails"
+            class="transactionDetailsClose"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="transactionDetailsIcon">
+            <i id="transactionDetailsIcon"
+               class="fa-solid fa-receipt"></i>
+        </div>
+
+        <h2 id="transactionDetailsTitle">
+            Transaction Details
+        </h2>
+
+        <p id="transactionDetailsSubtitle">
+            Transaction information
+        </p>
+
+        <div class="transactionDetailsAmount">
+            <span>Amount</span>
+            <strong id="transactionDetailsAmount">
+                ₦0
+            </strong>
+        </div>
+
+        <div class="transactionDetailsTable">
+
+            <div>
+                <span>Type</span>
+                <strong id="transactionDetailsType">-</strong>
+            </div>
+
+            <div>
+                <span>Network</span>
+                <strong id="transactionDetailsNetwork">-</strong>
+            </div>
+
+            <div>
+                <span>Phone</span>
+                <strong id="transactionDetailsPhone">-</strong>
+            </div>
+
+            <div>
+                <span>Date & Time</span>
+                <strong id="transactionDetailsDate">-</strong>
+            </div>
+
+            <div>
+                <span>Status</span>
+                <strong id="transactionDetailsStatus">-</strong>
+            </div>
+
+        </div>
+
+        <!-- PIN DETAILS -->
+
+        <div
+            id="transactionPinSection"
+            class="transactionPinSection"
+            style="display:none;"
+        >
+
+            <span>AIRTIME PIN</span>
+
+            <strong id="transactionDetailsPin">
+                -
+            </strong>
+
+            <div class="transactionPinActions">
+
+                <button id="transactionCopyPin">
+                    <i class="fa-solid fa-copy"></i>
+                    Copy PIN
+                </button>
+
+                <button id="transactionOpenKeypad">
+                    <i class="fa-solid fa-phone"></i>
+                    Open Keypad
+                </button>
+
+            </div>
+
+        </div>
+
+        <button
+            id="closeTransactionDetailsBtn"
+            class="transactionDetailsDone"
+        >
+            Done
+        </button>
+
+    </div>
+
+</div>
+
+<section id="fundRequestPage" class="page" style="display:none;">
+
+    <div class="pageHeader">
+        <button onclick="goHome()">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <div class="pageTitle">
+            <h2>Fund Wallet</h2>
+            <p>Request money to fund your wallet</p>
+        </div>
+    </div>
+    
+     <div class="fundBalanceCard">
+
+    <div class="fundBalanceTop">
+        <span>Current Balance</span>
+        <i class="fa-solid fa-wallet"></i>
+    </div>
+
+    <div class="fundBalanceAmount">
+        ₦<span id="fundCurrentBalance">0.00</span>
+    </div>
+
+    <p>Available wallet balance</p>
+
+</div>
+     
+    <div class="fundRequestCard">
+
+        <div class="fundWalletIcon">
+            <i class="fa-solid fa-wallet"></i>
+        </div>
+
+        <h3>Fund Request</h3>
+        <p>Enter the amount you want to add to your wallet.</p>
+
+        <div class="fundAmountBox">
+            <span>₦</span>
+            <input
+                type="number"
+                id="fundAmount"
+                placeholder="0.00"
+                min="100"
+            >
+        </div>
+
+        <button id="submitFundRequestBtn" class="fundRequestBtn">
+            Submit Fund Request
+        </button>
+
+    </div>
+
+    <div class="fundStatusCard">
+
+        <div class="fundStatusHeader">
+            <h3>Transaction Status</h3>
+        </div>
+
+        <div id="fundRequestStatus">
+            <p>No fund request yet.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ============================= -->
+<!-- USER APP CUSTOM ALERT -->
+<!-- ============================= -->
+
+<div id="appAlert" class="appAlert">
+
+    <div class="appAlertIcon" id="appAlertIcon">
+        <i class="fa-solid fa-circle-check"></i>
+    </div>
+
+    <div class="appAlertContent">
+        <h3 id="appAlertTitle">Success</h3>
+        <p id="appAlertMessage"></p>
+    </div>
+
+    <button
+        type="button"
+        class="appAlertClose"
+        id="appAlertClose">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+
+</div>
+
+<!-- LOGOUT CONFIRMATION MODAL -->
+
+<div id="logoutModal" class="logoutModal">
+
+    <div class="logoutCard">
+
+        <div class="logoutIcon">
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </div>
+
+        <h2>Logout?</h2>
+
+        <p>
+            Are you sure you want to logout from your account?
+        </p>
+
+        <div class="logoutActions">
+
+            <button
+                type="button"
+                id="cancelLogoutBtn"
+                class="logoutCancelBtn">
+
+                Cancel
+
+            </button>
+
+            <button
+                type="button"
+                id="confirmLogoutBtn"
+                class="logoutConfirmBtn">
+
+                I'm sure
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+  
+<script src="dash2.js"></script>
+
+</body>
+</html>

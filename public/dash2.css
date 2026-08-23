@@ -1,0 +1,5518 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background: #f6f8fc;
+color:#111;
+padding:15px;
+padding-bottom:100px;
+
+padding-top:120px;
+padding-bottom:100px;
+}
+
+/* ================= HEADER ================= */
+
+.header{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:95px;
+
+background:#f6f8fc;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:0 18px;
+
+z-index:999;
+
+box-shadow:0 2px 10px rgba(0,0,0,.0);
+padding-top:40px;
+
+}
+
+.left{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.menu,
+.notify{
+width:45px;
+height:45px;
+background:#fff;
+border-radius:15px;
+display:flex;
+align-items:center;
+justify-content:center;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+position:relative;
+}
+
+.menu i,
+.notify i{
+font-size:20px;
+}
+
+.notify span{
+width:10px;
+height:10px;
+background:red;
+border-radius:50%;
+position:absolute;
+top:9px;
+right:9px;
+}
+
+.small{
+font-size:13px;
+color:#888;
+}
+
+.left h2{
+font-size:20px;
+font-weight:600;
+}
+
+/* ================= WALLET ================= */
+
+.wallet{
+background:#fff;
+border-radius:28px;
+padding:25px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,.0);
+}
+
+.avatar{
+width:70px;
+height:70px;
+background:#111;
+color:#FFD33D;
+border-radius:50%;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:28px;
+margin-bottom:15px;
+}
+
+.wallet p{
+color:#777;
+}
+
+.wallet h1{
+font-size:34px;
+margin:12px 0;
+}
+
+.wallet button{
+border:none;
+background:#FFD33D;
+width:45px;
+height:45px;
+border-radius:50%;
+font-size:18px;
+cursor:pointer;
+}
+
+/* ================= ACTIONS ================= */
+
+.actions{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+margin-top:20px;
+}
+
+.action{
+background:#fff;
+border-radius:20px;
+padding:20px;
+box-shadow:0 5px 15px rgba(0,0,0,.0);
+text-align:center;
+}
+
+.action i{
+font-size:25px;
+color:#111;
+margin-bottom:10px;
+}
+
+.action h4{
+margin-bottom:5px;
+}
+
+.action p{
+font-size:13px;
+color:#777;
+}
+
+/* ================= SERVICES ================= */
+
+.services{
+margin-top:25px;
+}
+
+.title{
+margin-bottom:15px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+}
+
+.item{
+background:#fff;
+padding:15px 8px;
+border-radius:18px;
+text-align:center;
+box-shadow:0 5px 15px rgba(0,0,0,.0);
+cursor:pointer;
+transition:.3s;
+}
+
+.item:hover{
+transform:translateY(-3px);
+}
+
+.icon{
+width:50px;
+height:50px;
+background:#111;
+color:#FFD33D;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+margin:auto;
+font-size:20px;
+margin-bottom:10px;
+}
+
+.item span{
+font-size:12px;
+}
+
+/* ================= BANNER ================= */
+
+.banner{
+margin-top:25px;
+background:#25D366;
+color:#fff;
+padding:20px;
+border-radius:22px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.banner i{
+font-size:45px;
+}
+
+/* ================= HISTORY ================= */
+
+.history{
+margin-top:25px;
+}
+
+.head{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:15px;
+}
+
+.head a{
+text-decoration:none;
+color:#FFD33D;
+font-weight:600;
+}
+
+.card{
+background:#fff;
+padding:20px;
+border-radius:20px;
+box-shadow:0 5px 15px rgba(0,0,0,.0);
+}
+
+.card h4{
+margin-bottom:5px;
+}
+
+.card p{
+font-size:13px;
+color:#777;
+}
+
+/* ================= DATA PAGE ================= */
+
+.page{
+display:none;
+background:#f6f8fc;
+
+}
+
+.pageHeader{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:110px;
+
+background:#f6f8fc;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:0 18px;
+
+z-index:999;
+
+box-shadow:0 2px 10px rgba(0,0,0,.0);
+padding-top:45px;
+
+}
+
+.pageHeader button{
+width:45px;
+height:45px;
+border:none;
+border-radius:15px;
+background:#fff;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.blackCard{
+background:#111;
+color:#FFD33D;
+padding:25px;
+border-radius:22px;
+margin-bottom:20px;
+}
+
+.blackCard p{
+color:#fff;
+margin-top:6px;
+}
+
+.phoneInput{
+width:100%;
+padding:15px;
+border:none;
+border-radius:18px;
+margin-bottom:20px;
+background:#fff;
+box-shadow:0 5px 15px rgba(0,0,0,.0);
+font-size:15px;
+}
+
+.networkGrid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:12px;
+margin:15px 0 25px;
+}
+
+.network{
+background:#fff;
+padding:15px;
+text-align:center;
+border-radius:18px;
+font-weight:600;
+box-shadow:0 5px 15px rgba(0,0,0,.06);
+cursor:pointer;
+}
+
+.network.active{
+background:#FFD33D;
+}
+
+.plans{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+}
+
+.plan{
+background:#fff;
+padding:18px;
+border-radius:20px;
+box-shadow:0 5px 15px rgba(0,0,0,.06);
+}
+
+.plan h4{
+color:#111;
+}
+
+.plan p{
+color:#777;
+font-size:13px;
+margin:6px 0;
+}
+
+.plan strong{
+display:block;
+margin-bottom:10px;
+font-size:20px;
+}
+
+.plan button{
+width:100%;
+padding:12px;
+border:none;
+border-radius:15px;
+background:#FFD33D;
+font-weight:600;
+cursor:pointer;
+}
+
+/* ================= BOTTOM NAV ================= */
+
+.bottomNav{
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+background:#fff;
+display:flex;
+justify-content:space-around;
+padding:14px 0;
+border-radius:25px 25px 0 0;
+box-shadow:0 -5px 20px rgba(0,0,0,.08);
+}
+
+.navItem{
+text-align:center;
+font-size:12px;
+color:#888;
+cursor:pointer;
+}
+
+.navItem i{
+font-size:20px;
+margin-bottom:5px;
+}
+
+.navItem.active{
+color:#FFD33D;
+}
+
+@media(max-width:500px){
+
+.grid{
+grid-template-columns:repeat(4,1fr);
+gap:10px;
+}
+
+.networkGrid{
+grid-template-columns:repeat(4,1fr);
+}
+
+.plans{
+grid-template-columns:repeat(2,1fr);
+}
+
+.wallet h1{
+font-size:28px;
+}
+
+.icon{
+width:45px;
+height:45px;
+}
+
+}
+
+
+/* ================= BUY DATA PAGE ================= */
+
+.page{
+display:none;
+padding-bottom:100px;
+}
+
+.pageHeader{
+display:flex;
+align-items:center;
+justify-content:space-between;
+margin-bottom:20px;
+}
+
+.pageHeader button{
+width:45px;
+height:45px;
+border:none;
+border-radius:14px;
+background:#fff;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+font-size:18px;
+cursor:pointer;
+}
+
+.pageTitle{
+flex:1;
+margin-left:12px;
+}
+
+.pageTitle h2{
+font-size:15px;
+font-weight:700;
+}
+
+.pageTitle p{
+font-size:13px;
+color:#888;
+margin-top:3px;
+}
+
+.historyBtn{
+color:#111;
+}
+
+/* ================= BLACK BANNER ================= */
+
+.blackBanner{
+background:#111;
+border-radius:24px;
+padding:22px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:22px;
+}
+
+.blackBanner h2{
+color:#FFD43B;
+font-size:23px;
+}
+
+.blackBanner p{
+color:#fff;
+opacity:.85;
+margin-top:5px;
+font-size:13px;
+}
+
+.wifiIcon{
+width:65px;
+height:65px;
+border-radius:50%;
+background:#FFD43B;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:28px;
+color:#111;
+}
+
+/* ================= PHONE CARD ================= */
+
+.phoneCard{
+background:#fff;
+padding:20px;
+border-radius:22px;
+box-shadow:0 8px 20px rgba(0,0,0,.0);
+margin-bottom:20px;
+}
+
+.phoneTop{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:15px;
+}
+
+.phoneTop h3{
+font-size:15px;
+font-weight:700;
+}
+
+.beneficiaryBtn{
+background:#f5f5f5;
+border:none;
+padding:10px 15px;
+border-radius:12px;
+font-size:11px;
+font-weight:600;
+cursor:pointer;
+}
+
+.phoneInput{
+width:100%;
+height:58px;
+padding:0 18px;
+border:1px solid #eee;
+background: #f6f8fc;
+border-radius:16px;
+font-size:16--px;
+font-weight:600;
+outline:none;
+transition:.3s;
+}
+
+.phoneInput:focus{
+border-color:#FFD43B;
+}
+
+.phoneHint{
+display:block;
+margin-top:10px;
+color:#888;
+font-size:12px;
+}
+
+/* ================= SECTION TITLE ================= */
+
+.sectionTitle{
+font-size:18px;
+font-weight:700;
+margin:22px 0 15px;
+}
+
+/* ================= NETWORK ================= */
+
+.networkGrid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:7px;
+}
+
+.networkCard{
+background:#fff;
+padding:13px 3px;
+border-radius:50%;
+text-align:center;
+cursor:pointer;
+border:2px solid transparent;
+transition:.3s;
+box-shadow:0 5px 15px rgba(0,0,0,.0);
+}
+
+.networkCard img{
+width:45px;
+height:45px;
+object-fit:contain;
+margin-bottom:-2px;
+border-radius:50%;
+}
+
+.networkCard span{
+display:block;
+font-size:13px;
+font-weight:600;
+}
+
+/* Active Colors */
+
+.networkCard.mtn{
+border-color:#FFCC00;
+background:#FFFBEA;
+}
+
+.networkCard.airtel{
+border-color:#E60012;
+background:#FFF1F1;
+}
+
+.networkCard.glo{
+border-color:#00A651;
+background:#F0FFF5;
+}
+
+.networkCard.ninemobile{
+border-color:#00A651;
+background:#F5FFF8;
+}
+/* ================= SAVE BENEFICIARY ================= */
+
+.saveCard,
+.ussdCard{
+background:#fff;
+margin-top:18px;
+padding:18px;
+border-radius:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 5px 15px rgba(0,0,0,.0);
+}
+
+.saveLeft,
+.ussdLeft{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.saveLeft i,
+.ussdLeft i{
+width:48px;
+height:48px;
+background:#FFD43B;
+color:#111;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:20px;
+}
+
+.saveLeft h4,
+.ussdLeft h4{
+font-size:16px;
+font-weight:600;
+}
+
+.saveLeft p,
+.ussdLeft p{
+font-size:12px;
+color:#777;
+margin-top:3px;
+}
+
+.ussdCard button{
+background:#111;
+color:#FFD43B;
+border:none;
+padding:10px 18px;
+border-radius:12px;
+font-weight:600;
+cursor:pointer;
+}
+
+/* ================= SWITCH ================= */
+
+.switch{
+position:relative;
+display:inline-block;
+width:52px;
+height:28px;
+}
+
+.switch input{
+display:none;
+}
+
+.slider{
+position:absolute;
+top:0;
+left:0;
+right:0;
+bottom:0;
+background:#ddd;
+border-radius:50px;
+transition:.3s;
+cursor:pointer;
+}
+
+.slider:before{
+content:"";
+position:absolute;
+width:22px;
+height:22px;
+left:3px;
+top:3px;
+background:white;
+border-radius:50%;
+transition:.3s;
+}
+
+.switch input:checked + .slider{
+background:#FFD43B;
+}
+
+.switch input:checked + .slider:before{
+transform:translateX(24px);
+}
+
+/* ================= CATEGORY ================= */
+
+#categorySection{
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.categoryGrid{
+    display:flex;
+    flex-wrap:nowrap;      /* Kada su sauka ƙasa */
+    gap:10px;
+    overflow-x:auto;       /* A ja hagu/dama idan sun yi yawa */
+    padding:5px 0;
+    scrollbar-width:none;
+}
+
+.categoryGrid::-webkit-scrollbar{
+    display:none;
+}
+
+.categoryCard{
+    flex:0 0 auto;
+    min-width:90px;
+    height:45px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:12px;
+    background:#f5f5f5;
+    border:1px solid #ddd;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.categoryCard:hover{
+transform:translateY(-2px);
+}
+
+.categoryCard.active{
+background:#111;
+color:#FFD43B;
+border-color:#FFD43B;
+}
+
+/* ================= DATA PLANS ================= */
+
+#plansContainer{
+display:grid;
+grid-template-columns:1fr;
+gap:18px;
+margin-top:20px;
+}
+
+.planCard{
+background:#fff;
+padding:22px;
+border-radius:22px;
+box-shadow:0 8px 18px rgba(0,0,0,.08);
+border:2px solid transparent;
+transition:.3s;
+cursor:pointer;
+}
+
+.planCard:hover{
+transform:translateY(-3px);
+}
+
+.planCard.active{
+border-color:#FFD43B;
+}
+
+.planTop{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:12px;
+}
+
+.planTop h3{
+font-size:22px;
+font-weight:700;
+}
+
+.planPrice{
+font-size:24px;
+font-weight:700;
+color:#111;
+margin:12px 0;
+}
+
+.planValidity{
+color:#666;
+font-size:14px;
+}
+
+.buyButton{
+width:100%;
+margin-top:25px;
+height:55px;
+border:none;
+border-radius:18px;
+background:#FFD43B;
+font-size:18px;
+font-weight:700;
+cursor:pointer;
+transition:.3s;
+}
+
+.buyButton:hover{
+transform:scale(.98);
+}
+
+/* ================= SUMMARY ================= */
+
+.summaryCard{
+margin-top:25px;
+background:#fff;
+padding:20px;
+border-radius:20px;
+box-shadow:0 5px 15px rgba(0,0,0,.06);
+}
+
+.summaryCard h3{
+margin-bottom:15px;
+}
+
+.summaryRow{
+display:flex;
+justify-content:space-between;
+padding:12px 0;
+border-bottom:1px solid #eee;
+}
+
+.summaryRow:last-child{
+border-bottom:none;
+}
+
+.total strong{
+font-size:20px;
+color:#111;
+}
+
+/* ================= SUCCESS MODAL ================= */
+
+.successModal{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.55);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:999;
+}
+
+.successBox{
+width:90%;
+max-width:350px;
+background:#fff;
+padding:30px;
+border-radius:25px;
+text-align:center;
+animation:pop .3s ease;
+}
+
+.successIcon{
+width:80px;
+height:80px;
+margin:auto;
+background:#FFD43B;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:38px;
+margin-bottom:20px;
+}
+
+.successBox button{
+margin-top:20px;
+width:100%;
+height:50px;
+border:none;
+border-radius:15px;
+background:#111;
+color:#FFD43B;
+font-size:16px;
+font-weight:700;
+cursor:pointer;
+}
+
+@keyframes pop{
+0%{
+transform:scale(.7);
+opacity:0;
+}
+100%{
+transform:scale(1);
+opacity:1;
+}
+}
+
+@media(max-width:500px){
+
+.categoryGrid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.networkCard img{
+width:38px;
+height:38px;
+}
+
+.planTop h3{
+font-size:20px;
+}
+
+.planPrice{
+font-size:22px;
+}
+
+}
+
+/* ================= PAY BAR ================= */
+
+.payBar{
+position:fixed;
+left:0;
+right:0;
+bottom:0;
+background:#fff;
+padding:20px 20px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+box-shadow:0 -8px 25px rgba(0,0,0,.08);
+z-index:999;
+}
+
+.payInfo h2{
+font-size:24px;
+font-weight:700;
+color:#111;
+margin-bottom:5px;
+}
+
+.payInfo span{
+font-size:16px;
+color:#666;
+font-weight:500;
+}
+
+.payNowBtn{
+border:none;
+background:#FFC107;
+height:45px;
+padding:0 55px;
+border-radius:35px;
+font-size:13px;
+font-weight:700;
+display:flex;
+align-items:center;
+gap:10px;
+cursor:pointer;
+transition:.3s;
+}
+
+.payNowBtn:hover{
+transform:scale(1.03);
+}
+
+
+
+/* ================= CONFIRM MODAL ================= */
+
+.confirmModal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.45);
+display:none;
+align-items:flex-end;
+justify-content:center;
+z-index:2000;
+}
+
+.confirmBox{
+width:100%;
+max-width:500px;
+background:#fff;
+border-radius:30px 30px 0 0;
+padding:25px;
+animation:popup .35s;
+}
+
+@keyframes popup{
+
+from{
+transform:translateY(100%);
+}
+
+to{
+transform:translateY(0);
+}
+
+}
+
+.confirmHeader{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
+}
+
+.confirmHeader h2{
+font-size:20px;
+font-weight:00;
+}
+
+.confirmHeader p{
+color:#777;
+margin-top:5px;
+font-size:13px;
+}
+
+.confirmHeader button{
+border:none;
+background:#f3f3f3;
+width:45px;
+height:45px;
+border-radius:50%;
+font-size:22px;
+cursor:pointer;
+}
+
+
+
+/* Amount */
+
+.confirmAmount{
+background:#FFF9EA;
+border:1px solid #FFE082;
+border-radius:20px;
+padding:25px;
+text-align:center;
+margin-bottom:20px;
+}
+
+.confirmAmount small{
+font-size:13px;
+color:#777;
+}
+
+.confirmAmount h3{
+font-size:30px;
+margin:10px 0;
+font-weight:700;
+}
+
+.confirmAmount span{
+font-size:13px;
+font-weight:600;
+color:#666;
+}
+
+
+
+/* Network */
+
+.confirmNetwork{
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:20px;
+}
+
+.confirmNetwork img{
+width:30px;
+height:30px;
+border-radius:50%;
+}
+
+.confirmNetwork span{
+font-size:17px;
+font-weight:600;
+}
+
+
+
+/* Table */
+
+.confirmTable{
+border:1px solid #eee;
+border-radius:20px;
+overflow:hidden;
+margin-bottom:25px;
+}
+
+.confirmTable div{
+display:flex;
+justify-content:space-between;
+padding:18px 20px;
+border-bottom:1px solid #eee;
+}
+
+.confirmTable div:last-child{
+border-bottom:none;
+}
+
+.confirmTable span{
+color:#666;
+font-size:14px;
+}
+
+.confirmTable strong{
+font-size:15px;
+}
+
+
+
+/* Confirm Button */
+
+.confirmPayBtn{
+width:100%;
+height:50px;
+background:#FFC107;
+border:none;
+border-radius:18px;
+font-size:16px;
+font-weight:700;
+margin-bottom:15px;
+cursor:pointer;
+}
+
+
+
+/* Cancel */
+
+.cancelPayBtn{
+width:100%;
+height:55px;
+background:none;
+border:none;
+font-size:15px;
+font-weight:600;
+color:#777;
+cursor:pointer;
+}
+
+/* ===== NEW PLAN CARD ===== */
+
+#plansContainer{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:8px;
+}
+
+.planCard{
+    position:relative;
+    background:#fff;
+    border-radius:12px;
+    padding:10px;
+    border:1px solid #ececec;
+    min-height:95px;   /* maimakon height:78px */
+    transition:.3s;
+    box-shadow:0 2px 6px rgba(0,0,0,.05);
+    overflow:hidden;
+}
+
+.planTop{
+    margin-bottom:4px;
+}
+
+.planMiddle{
+    margin-bottom:6px;
+}
+
+.planMiddle h3{
+    font-size:15px;
+    margin:0;
+}
+
+.planMiddle small{
+    font-size:10px;
+}
+
+.planBottom{
+    margin-top:0;
+}
+
+.planBottom strong{
+    font-size:15px;
+    font-weight:700;
+    color:#111;
+}
+
+.selectPlan{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+opacity:0;
+cursor:pointer;
+}
+
+#phoneError{
+margin-top:6px;
+font-size:13px;
+font-weight:600;
+color:#e53935;
+}
+
+/* ================= AIRTIME HOME ================= */
+
+.serviceCards{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    padding:20px;
+}
+
+.serviceCard{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    background:#fff;
+    border-radius:18px;
+    padding:18px;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+    cursor:pointer;
+    transition:.3s;
+}
+
+.serviceCard:hover{
+    transform:translateY(-3px);
+}
+
+.serviceIcon{
+    width:55px;
+    height:55px;
+    border-radius:15px;
+    background:#FFD43B;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:22px;
+    flex-shrink:0;
+}
+
+.serviceText{
+    flex:1;
+}
+
+.serviceText h3{
+    font-size:17px;
+    color:#111;
+    margin-bottom:4px;
+}
+
+.serviceText p{
+    font-size:8px;
+    color:#777;
+    line-height:1.5;
+}
+
+.serviceCard .fa-chevron-right{
+    color:#999;
+    font-size:18px;
+}
+
+/* ================= AIRTIME MODULE ================= */
+
+
+..quickAmount{
+
+display:flex;
+overflow-x:auto;
+gap:12px;
+
+padding:8px 0;
+
+scrollbar-width:none;
+
+}
+
+.quickAmount::-webkit-scrollbar{
+
+display:none;
+
+}
+
+
+.quickAmount button{
+
+flex:0 0 auto;
+
+padding:12px 22px;
+
+border:none;
+
+border-radius:14px;
+
+background:#f3f4f6;
+
+font-size:15px;
+font-weight:600;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.quickAmount button:hover{
+
+background:#2563eb;
+color:#fff;
+
+}
+
+.quickAmount button.active{
+
+background:#2563eb;
+color:#fff;
+
+}
+
+.quickAmount button:active{
+
+transform:scale(.95);
+
+}
+
+
+
+
+
+.amountCard{
+
+background:white;
+margin:15px;
+padding:18px;
+border-radius:20px;
+box-shadow:0 5px 15px rgba(0,0,0,.0);
+
+}
+
+
+
+.amountCard h3{
+
+margin-bottom:15px;
+font-size:16px;
+box-shadow:0 5px 15px rgba(0,0,0,.0);
+}
+
+
+
+.amountInput{
+
+display:flex;
+align-items:center;
+background:#f5f7fb;
+border-radius:15px;
+padding:0 15px;
+height:55px;
+
+}
+
+
+.amountInput span{
+
+font-size:22px;
+font-weight:600;
+
+}
+
+
+
+.amountInput input{
+
+border:none;
+outline:none;
+background:transparent;
+width:100%;
+font-size:18px;
+padding-left:10px;
+
+}
+
+
+
+
+#airtimePhoneError,
+#amountError{
+
+color:red;
+font-size:13px;
+margin-top:8px;
+
+}
+
+
+
+
+.networkCard.active{
+
+border:2px solid #2563eb;
+background:#eff6ff;
+
+}
+
+
+
+.networkCard img{
+
+width:40px;
+height:40px;
+object-fit:contain;
+
+}
+
+
+
+.networkCard{
+
+background:white;
+border-radius:20px;
+padding:15px;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+gap:8px;
+box-shadow:0 5px 15px rgba(0,0,0,.0);
+cursor:pointer;
+
+}
+
+
+
+
+
+/* PAY BAR */
+
+.payBar{
+
+position:fixed;
+bottom:80px;
+left:15px;
+right:15px;
+
+background:white;
+
+padding:15px;
+
+border-radius:22px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+z-index:50;
+
+}
+
+
+
+.payInfo h2{
+
+margin:0;
+font-size:22px;
+
+}
+
+
+.payInfo span{
+
+font-size:13px;
+color:#777;
+
+}
+
+
+
+#airtimePayNow{
+
+background:#2563eb;
+color:white;
+
+border:none;
+
+padding:14px 20px;
+
+border-radius:15px;
+
+font-weight:600;
+
+}
+
+
+
+
+
+
+
+/* AIRTIME PAGE HEADER */
+
+.pageHeader{
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+padding:20px;
+
+}
+
+
+.pageHeader button{
+
+width:40px;
+height:40px;
+
+border:none;
+
+border-radius:50%;
+
+background:white;
+
+color:#2563eb;
+
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+
+
+
+
+.blackBanner{
+
+margin:15px;
+
+background:#111;
+
+color:white;
+
+padding:25px;
+
+border-radius:25px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
+
+
+
+.blackBanner h2{
+
+margin:0;
+
+}
+
+
+
+.blackBanner p{
+
+font-size:13px;
+
+opacity:.7;
+
+}
+
+
+
+.wifiIcon{
+
+width:55px;
+height:55px;
+
+background:#2563eb;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:25px;
+
+}
+
+
+
+
+
+.phoneCard{
+
+background:white;
+
+margin:15px;
+
+padding:18px;
+
+border-radius:22px;
+
+box-shadow:0 5px 15px rgba(0,0,0,.02);
+
+}
+
+
+
+.phoneTop{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
+
+
+
+.beneficiaryBtn{
+
+background:#eff6ff;
+
+border:none;
+
+padding:10px;
+
+border-radius:12px;
+
+color:#2563eb;
+
+}
+
+
+
+.phoneInput{
+
+width:100%;
+
+height:55px;
+
+margin-top:15px;
+
+border:none;
+
+background:#f5f7fb;
+
+border-radius:15px;
+
+padding:0 15px;
+
+font-size:16px;
+
+outline:none;
+
+}
+
+
+
+
+.sectionTitle{
+
+margin:20px 15px 10px;
+
+font-size:17px;
+
+}
+
+
+
+
+
+.saveCard,
+.ussdCard{
+
+background:white;
+
+margin:15px;
+
+padding:18px;
+
+border-radius:20px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+box-shadow:0 5px 15px rgba(0,0,0,.0);
+
+}
+
+
+
+.saveLeft,
+.ussdLeft{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+}
+
+
+
+.saveLeft i,
+.ussdLeft i{
+
+font-size:25px;
+
+color:#2563eb;
+
+}
+
+
+
+.saveLeft p,
+.ussdLeft p{
+
+font-size:12px;
+
+color:#777;
+
+margin:3px 0;
+
+}
+
+
+
+.ussdCard button{
+
+background:#2563eb;
+
+color:white;
+
+border:none;
+
+padding:10px 20px;
+
+border-radius:12px;
+
+}
+
+.quickAmount button.active{
+    background:#2563eb;
+    color:#fff;
+}
+
+/* ================= PAY BAR ================= */
+
+.payBar{
+
+position:fixed;
+
+left:15px;
+right:15px;
+bottom:20px;
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+padding:14px 16px;
+
+background:#ffffff;
+
+border-radius:18px;
+
+box-shadow:0 8px 30px rgba(0,0,0,.12);
+
+z-index:999;
+
+animation:payBarUp .25s ease;
+
+}
+
+@keyframes payBarUp{
+
+from{
+
+opacity:0;
+transform:translateY(60px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+.payInfo h2{
+
+margin:0;
+
+font-size:22px;
+
+font-weight:700;
+
+color:#111827;
+
+}
+
+.payInfo span{
+
+font-size:13px;
+
+color:#6b7280;
+
+}
+
+
+/* ================= PAY NOW BUTTON ================= */
+
+.payNowBtn{
+
+display:flex;
+align-items:center;
+justify-content:center;
+gap:8px;
+
+padding:14px 24px;
+
+border:none;
+outline:none;
+
+border-radius:14px;
+
+background:#2563eb;
+
+color:#fff;
+
+font-size:15px;
+font-weight:600;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.payNowBtn:hover{
+
+background:#1d4ed8;
+
+transform:translateY(-2px);
+
+}
+
+.payNowBtn:active{
+
+transform:scale(.96);
+
+}
+
+.payNowBtn i{
+
+font-size:14px;
+
+transition:.3s;
+
+}
+
+.payNowBtn:hover i{
+
+transform:translateX(3px);
+
+}
+
+
+/* ================= QUICK AMOUNT ================= */
+
+.quickAmount{
+
+display:flex;
+
+gap:12px;
+
+overflow-x:auto;
+
+padding:8px 0;
+
+scrollbar-width:none;
+
+}
+
+.quickAmount::-webkit-scrollbar{
+
+display:none;
+
+}
+
+.quickAmount button{
+
+flex:0 0 auto;
+
+padding:12px 22px;
+
+border:none;
+
+border-radius:12px;
+
+background:#f3f4f6;
+
+color:#111827;
+
+font-size:15px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.quickAmount button:hover{
+
+background:#2563eb;
+
+color:#fff;
+
+}
+
+.quickAmount button.active{
+
+background:#2563eb;
+
+color:#fff;
+
+}
+
+/* ================= PIN MODAL ================= */
+
+.pinModal{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.55);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:5000;
+}
+
+.pinBox{
+    width:92%;
+    max-width:360px;
+    background:#fff;
+    border-radius:30px;
+    padding:35px 25px;
+    text-align:center;
+    animation:pinPop .35s ease;
+}
+
+@keyframes pinPop{
+    from{
+        transform:scale(.85);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+.pinLogo{
+    width:80px;
+    height:80px;
+    margin:auto;
+    border-radius:50%;
+    background:#111;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.pinLogo img{
+    width:55px;
+    height:55px;
+    object-fit:contain;
+}
+
+.pinBox h2{
+    font-size:22px;
+    margin-bottom:8px;
+    color:#111;
+}
+
+.pinBox p{
+    color:#777;
+    font-size:14px;
+    line-height:1.6;
+    margin-bottom:25px;
+}
+
+.pinInputs{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    margin-bottom:20px;
+}
+
+.pinInput{
+    width:55px;
+    height:60px;
+    border:2px solid #ddd;
+    border-radius:15px;
+    text-align:center;
+    font-size:24px;
+    font-weight:700;
+    outline:none;
+    transition:.3s;
+}
+
+.pinInput:focus{
+    border-color:#FFC107;
+}
+
+#pinError{
+    display:block;
+    color:#e53935;
+    font-size:13px;
+    margin-bottom:18px;
+}
+
+/* ================= PROCESSING MODAL ================= */
+
+.processingModal{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:6000;
+
+    /* Blur Background */
+    background:rgba(255,255,255,.18);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+}
+.processingBox{
+    text-align:center;
+}
+
+.loaderRing{
+    position:relative;
+    width:140px;
+    height:140px;
+    margin:auto;
+}
+
+.loaderRing span{
+    position:absolute;
+    inset:0;
+    border-radius:50%;
+    border:4px solid transparent;
+    border-top:4px solid #FFC107;
+    border-right:4px solid #FFD54F;
+    animation:spinRing 1s linear infinite;
+}
+
+.processingLogo{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    background:#111;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.processingLogo img{
+    width:60px;
+    height:60px;
+    object-fit:contain;
+}
+
+.processingBox h2{
+    margin-top:25px;
+    font-size:22px;
+    color:#111;
+}
+
+.processingBox p{
+    margin-top:8px;
+    color:#777;
+    font-size:14px;
+}
+
+@keyframes spinRing{
+
+    0%{
+        transform:rotate(0deg);
+    }
+
+    100%{
+        transform:rotate(360deg);
+    }
+
+}
+
+
+/* ================= PIN INPUT FIX ================= */
+
+.pinInputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.pinInput,
+.setPinInput {
+    width: 48px !important;
+    height: 52px !important;
+    min-width: 48px !important;
+    max-width: 48px !important;
+    padding: 0 !important;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.pinInput:focus,
+.setPinInput:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.12);
+}
+
+
+ /* ================= FORGOT PIN ================= */
+
+.forgotPinPassword {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 16px;
+    margin: 12px 0 18px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    outline: none;
+    font-family: Poppins, sans-serif;
+    font-size: 15px;
+    background: #f8f9fa;
+}
+
+.forgotPinPassword:focus {
+    border-color: #2563eb;
+    background: #fff;
+}
+
+.forgotPinInput {
+    width: 45px;
+    height: 52px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.forgotPinInput:focus {
+    border-color: #2563eb;
+}
+
+#forgotPinError {
+    display: block;
+    margin: 10px 0;
+    color: #e53935;
+    font-size: 13px;
+    text-align: center;
+}
+
+.forgotPinBtn {
+    border: none;
+    background: transparent;
+    color: #2563eb;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.forgotPinBtn:active {
+    opacity: 0.7;
+}
+
+
+.successModal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+}
+
+.successBox {
+    width: 90%;
+    max-width: 380px;
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.successIcon {
+    font-size: 60px;
+    margin-bottom: 15px;
+}
+
+.successBox h2 {
+    margin: 0 0 10px;
+}
+
+.successBox p {
+    margin-bottom: 20px;
+}
+
+.successBox button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: #2563eb;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.successModal.show {
+    display: flex !important;
+}
+
+
+/* ================================
+   AIRTIME PIN SUCCESS MODAL
+================================ */
+
+.pinSuccessModal {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+    z-index: 99999;
+}
+
+.pinSuccessBox {
+    width: 100%;
+    max-width: 380px;
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 28px 22px 22px;
+    text-align: center;
+    position: relative;
+    box-sizing: border-box;
+
+    animation: pinSuccessPop 0.25s ease;
+}
+
+@keyframes pinSuccessPop {
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.pinSuccessClose {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+    width: 34px;
+    height: 34px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #f1f5f9;
+    color: #64748b;
+
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.pinSuccessIcon {
+    width: 70px;
+    height: 70px;
+
+    margin: 5px auto 16px;
+
+    border-radius: 50%;
+    background: #dcfce7;
+    color: #16a34a;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 30px;
+}
+
+.pinSuccessBox h2 {
+    margin: 0;
+    color: #111827;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.pinSuccessSubtitle {
+    margin: 8px 0 20px;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.purchasedPinCard {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+
+    padding: 18px 12px;
+    margin-bottom: 18px;
+}
+
+.purchasedPinCard span {
+    display: block;
+    color: #64748b;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 9px;
+}
+
+.purchasedPinCard strong {
+    display: block;
+    color: #2563eb;
+    font-size: 23px;
+    letter-spacing: 3px;
+    font-family: monospace;
+    word-break: break-all;
+}
+
+.pinSuccessActions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.pinSuccessActions button {
+    height: 48px;
+    border: none;
+    border-radius: 12px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+
+.copyPinBtn {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.openKeypadBtn {
+    background: #2563eb;
+    color: #ffffff;
+}
+
+.donePinBtn {
+    width: 100%;
+    height: 48px;
+
+    margin-top: 10px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #111827;
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+@media (max-width: 380px) {
+
+    .pinSuccessActions {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* ================================
+   FULL HISTORY PAGE
+================================ */
+
+.historyFilters {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 5px 2px 12px;
+    margin-bottom: 10px;
+
+    scrollbar-width: none;
+}
+
+.historyFilters::-webkit-scrollbar {
+    display: none;
+}
+
+.historyFilter {
+    flex: 0 0 auto;
+
+    border: none;
+    background: #f1f5f9;
+    color: #64748b;
+
+    padding: 10px 17px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.historyFilter.active {
+    background: #2563eb;
+    color: #ffffff;
+}
+
+.historyFilter:active {
+    transform: scale(0.96);
+}
+
+
+/* TRANSACTION LIST */
+
+.fullHistoryList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    padding-bottom: 100px;
+}
+
+
+/* TRANSACTION CARD */
+
+.historyTransaction {
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 16px;
+
+    padding: 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.04);
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.historyTransaction:active {
+    transform: scale(0.98);
+}
+
+
+/* ICON */
+
+.historyTransactionIcon {
+    width: 44px;
+    height: 44px;
+
+    flex-shrink: 0;
+
+    border-radius: 13px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+}
+
+.historyTransactionIcon.data {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.historyTransactionIcon.airtime {
+    background: #ecfdf5;
+    color: #16a34a;
+}
+
+.historyTransactionIcon.pin {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.historyTransactionIcon.fund {
+    background: #f0fdf4;
+    color: #15803d;
+}
+
+
+/* DETAILS */
+
+.historyTransactionDetails {
+    flex: 1;
+    min-width: 0;
+}
+
+.historyTransactionDetails h4 {
+    margin: 0 0 4px;
+
+    color: #111827;
+
+    font-size: 14px;
+    font-weight: 650;
+}
+
+.historyTransactionDetails p {
+    margin: 0;
+
+    color: #94a3b8;
+
+    font-size: 11px;
+}
+
+
+/* RIGHT SIDE */
+
+.historyTransactionRight {
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.historyTransactionAmount {
+    display: block;
+
+    color: #111827;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.historyTransactionStatus {
+    display: inline-block;
+
+    margin-top: 4px;
+
+    padding: 3px 8px;
+
+    border-radius: 20px;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+}
+
+.historyTransactionStatus.success,
+.historyTransactionStatus.approved {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.historyTransactionStatus.pending {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.historyTransactionStatus.failed,
+.historyTransactionStatus.rejected {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+
+/* EMPTY STATE */
+
+.historyEmpty {
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 18px;
+
+    padding: 45px 20px;
+
+    text-align: center;
+
+    margin-top: 10px;
+}
+
+.historyEmpty i {
+    width: 60px;
+    height: 60px;
+
+    margin: 0 auto 15px;
+
+    border-radius: 50%;
+
+    background: #eff6ff;
+    color: #2563eb;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 24px;
+}
+
+.historyEmpty h3 {
+    margin: 0 0 6px;
+
+    color: #111827;
+
+    font-size: 16px;
+}
+
+.historyEmpty p {
+    margin: 0;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+}
+
+
+/* LOADING */
+
+.historyLoading {
+    text-align: center;
+
+    padding: 35px 20px;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 400px) {
+
+    .historyFilter {
+        padding: 9px 14px;
+        font-size: 12px;
+    }
+
+    .historyTransaction {
+        padding: 13px;
+    }
+
+    .historyTransactionIcon {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .historyTransactionDetails h4 {
+        font-size: 13px;
+    }
+
+    .historyTransactionAmount {
+        font-size: 13px;
+    }
+
+}
+
+/* ==========================================
+   TRANSACTION DETAILS MODAL
+========================================== */
+
+.transactionDetailsModal {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+    z-index: 99998;
+}
+
+.transactionDetailsBox {
+    width: 100%;
+    max-width: 390px;
+
+    background: #ffffff;
+    border-radius: 24px;
+
+    padding: 26px 20px 20px;
+
+    position: relative;
+    box-sizing: border-box;
+
+    animation: transactionDetailsPop 0.25s ease;
+}
+
+@keyframes transactionDetailsPop {
+
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+.transactionDetailsClose {
+    position: absolute;
+
+    top: 14px;
+    right: 14px;
+
+    width: 34px;
+    height: 34px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #f1f5f9;
+    color: #64748b;
+
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+.transactionDetailsIcon {
+    width: 64px;
+    height: 64px;
+
+    margin: 4px auto 14px;
+
+    border-radius: 18px;
+
+    background: #eff6ff;
+    color: #2563eb;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+}
+
+.transactionDetailsBox h2 {
+    margin: 0;
+
+    text-align: center;
+
+    color: #111827;
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.transactionDetailsBox > p {
+    margin: 7px 0 18px;
+
+    text-align: center;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+}
+
+.transactionDetailsAmount {
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 16px;
+
+    padding: 15px;
+
+    text-align: center;
+
+    margin-bottom: 15px;
+}
+
+.transactionDetailsAmount span {
+    display: block;
+
+    color: #64748b;
+
+    font-size: 11px;
+
+    margin-bottom: 5px;
+}
+
+.transactionDetailsAmount strong {
+    display: block;
+
+    color: #111827;
+
+    font-size: 24px;
+
+    font-weight: 750;
+}
+
+.transactionDetailsTable {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    margin-bottom: 15px;
+}
+
+.transactionDetailsTable > div {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 12px 13px;
+
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.transactionDetailsTable > div:last-child {
+    border-bottom: none;
+}
+
+.transactionDetailsTable span {
+    color: #64748b;
+
+    font-size: 11px;
+}
+
+.transactionDetailsTable strong {
+    color: #111827;
+
+    font-size: 12px;
+
+    text-align: right;
+
+    word-break: break-word;
+}
+
+.transactionPinSection {
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 16px;
+
+    padding: 15px;
+
+    margin-bottom: 15px;
+
+    text-align: center;
+}
+
+.transactionPinSection > span {
+    display: block;
+
+    color: #64748b;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 8px;
+}
+
+.transactionPinSection > strong {
+    display: block;
+
+    color: #2563eb;
+
+    font-family: monospace;
+
+    font-size: 22px;
+
+    letter-spacing: 3px;
+
+    word-break: break-all;
+
+    margin-bottom: 13px;
+}
+
+.transactionPinActions {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 9px;
+}
+
+.transactionPinActions button {
+    height: 45px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 6px;
+}
+
+#transactionCopyPin {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+#transactionOpenKeypad {
+    background: #2563eb;
+    color: #ffffff;
+}
+
+.transactionDetailsDone {
+    width: 100%;
+
+    height: 46px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #111827;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+@media (max-width: 380px) {
+
+    .transactionPinActions {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* ===============================
+   FUND BALANCE CARD
+================================ */
+
+.fundBalanceCard {
+    margin: 16px;
+    padding: 22px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #fff;
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.20);
+}
+
+.fundBalanceTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.fundBalanceTop i {
+    font-size: 20px;
+}
+
+.fundBalanceAmount {
+    margin-top: 12px;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.fundBalanceCard p {
+    margin: 8px 0 0;
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+/* ===============================
+   FUND REQUEST PAGE
+================================ */
+
+.fundRequestCard {
+    margin: 16px;
+    padding: 24px 20px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+    text-align: center;
+}
+
+.fundWalletIcon {
+    width: 58px;
+    height: 58px;
+    margin: 0 auto 14px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eff6ff;
+    color: #2563eb;
+    font-size: 25px;
+}
+
+.fundRequestCard h3 {
+    margin: 5px 0 7px;
+    font-size: 20px;
+    color: #111827;
+}
+
+.fundRequestCard > p {
+    margin: 0 auto 20px;
+    max-width: 300px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #6b7280;
+}
+
+.fundAmountBox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 16px;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    background: #f9fafb;
+    text-align: left;
+}
+
+.fundAmountBox span {
+    font-size: 22px;
+    font-weight: 700;
+    color: #2563eb;
+}
+
+.fundAmountBox input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 22px;
+    font-weight: 600;
+    color: #111827;
+}
+
+.fundAmountBox input::placeholder {
+    color: #9ca3af;
+}
+
+.fundRequestBtn {
+    width: 100%;
+    margin-top: 18px;
+    padding: 15px;
+    border: none;
+    border-radius: 14px;
+    background: #2563eb;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.fundRequestBtn:active {
+    transform: scale(0.98);
+}
+
+
+/* ===============================
+   TRANSACTION STATUS
+================================ */
+
+.fundStatusCard {
+    margin: 16px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.fundStatusHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.fundStatusHeader h3 {
+    margin: 0;
+    font-size: 17px;
+    color: #111827;
+}
+
+#fundRequestStatus {
+    padding: 15px;
+    border-radius: 14px;
+    background: #f9fafb;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+/* ===============================
+   FUND REQUEST STATUS ITEM
+================================ */
+
+.fundStatusItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.fundStatusItem > div:first-child {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.fundStatusItem strong {
+    font-size: 17px;
+    color: #111827;
+}
+
+.fundStatusItem span {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+
+/* ===============================
+   STATUS BADGES
+================================ */
+
+.fundStatusBadge {
+    padding: 7px 11px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.fundStatusBadge.pending {
+    background: #fff7ed;
+    color: #ea580c;
+}
+
+.fundStatusBadge.approved {
+    background: #ecfdf5;
+    color: #16a34a;
+}
+
+.fundStatusBadge.rejected {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+/* ============================= */
+/* USER APP CUSTOM ALERT */
+/* ============================= */
+
+.appAlert {
+    position: fixed;
+    top: 25px;
+    right: 20px;
+
+    width: min(360px, calc(100% - 40px));
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 15px;
+
+    background: #ffffff;
+    border-radius: 16px;
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+
+    z-index: 999999;
+
+    transform: translateX(120%);
+    opacity: 0;
+    pointer-events: none;
+
+    transition:
+        transform 0.35s ease,
+        opacity 0.35s ease;
+}
+
+.appAlert.show {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.appAlertIcon {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #dcfce7;
+    color: #16a34a;
+
+    font-size: 20px;
+}
+
+.appAlertContent {
+    flex: 1;
+}
+
+.appAlertContent h3 {
+    margin: 0 0 3px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    color: #111827;
+}
+
+.appAlertContent p {
+    margin: 0;
+
+    font-size: 13px;
+    line-height: 1.4;
+
+    color: #6b7280;
+}
+
+.appAlertClose {
+    border: none;
+    background: transparent;
+
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #9ca3af;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    border-radius: 50%;
+}
+
+.appAlertClose:hover {
+    background: #f3f4f6;
+    color: #111827;
+}
+
+@media (max-width: 480px) {
+
+    .appAlert {
+        top: 15px;
+        right: 15px;
+        width: calc(100% - 30px);
+    }
+
+}
+
+/* ============================= /
+/ PROFILE PAGE /
+/ ============================= */
+
+.profilePage {
+    display: none;
+    min-height:50vh;
+    background: #f7f8fa;
+    padding: 5px 16px 50px;
+    margin: 0;
+}
+
+.profileHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 12px 0;
+    padding: 0;
+}
+
+.profileHeader h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.profileHeader button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 12px;
+    background: #ffffff;
+    color: #111827;
+    font-size: 17px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+
+.profileHeaderSpace {
+    width: 40px;
+}
+
+.profileUserCard {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 16px;
+    margin-bottom: 18px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.05);
+}
+
+.profileAvatar {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #facc15;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.profileUserInfo h3 {
+    margin: 0 0 4px;
+    font-size: 17px;
+    color: #111827;
+}
+
+.profileUserInfo p {
+    margin: 0;
+    font-size: 13px;
+    color: #6b7280;
+}
+
+
+/* SECTION TITLE */
+
+.profileSectionTitle {
+margin: 20px 5px 10px;
+font-size: 13px;
+font-weight: 700;
+color: #6b7280;
+}
+
+/* MENU */
+
+.profileMenu {
+background: #ffffff;
+border-radius: 18px;
+overflow: hidden;
+box-shadow: 0 5px 18px rgba(0,0,0,0.04);
+}
+
+.profileMenuItem {
+width: 100%;
+min-height: 72px;
+border: none;
+border-bottom: 1px solid #f1f1f1;
+background: #ffffff;
+display: flex;
+align-items: center;
+gap: 13px;
+padding: 13px 15px;
+text-align: left;
+cursor: pointer;
+}
+
+.profileMenuItem:last-child {
+border-bottom: none;
+}
+
+.profileMenuIcon {
+width: 42px;
+height: 42px;
+min-width: 42px;
+border-radius: 13px;
+background: #fef3c7;
+color: #d97706;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 17px;
+}
+
+.profileMenuText {
+flex: 1;
+min-width: 0;
+}
+
+.profileMenuText strong {
+display: block;
+font-size: 14px;
+font-weight: 600;
+color: #111827;
+margin-bottom: 3px;
+}
+
+.profileMenuText span {
+display: block;
+font-size: 12px;
+color: #9ca3af;
+}
+
+.profileArrow {
+color: #9ca3af;
+font-size: 13px;
+}
+
+/* BIOMETRIC SWITCH */
+
+.profileSwitch {
+position: relative;
+width: 44px;
+height: 24px;
+flex-shrink: 0;
+}
+
+.profileSwitch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+
+.profileSlider {
+position: absolute;
+inset: 0;
+background: #d1d5db;
+border-radius: 30px;
+transition: 0.25s;
+}
+
+.profileSlider::before {
+content: "";
+position: absolute;
+width: 18px;
+height: 18px;
+left: 3px;
+top: 3px;
+background: #ffffff;
+border-radius: 50%;
+transition: 0.25s;
+box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.profileSwitch input:checked + .profileSlider {
+background: #2563eb;
+}
+
+.profileSwitch input:checked + .profileSlider::before {
+transform: translateX(20px);
+}
+
+/* LOGOUT */
+
+.profileLogoutSection {
+margin-top: 25px;
+}
+
+#profileLogoutBtn {
+width: 100%;
+height: 52px;
+border: none;
+border-radius: 15px;
+background: #ffffff;
+color: #dc2626;
+font-size: 14px;
+font-weight: 600;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 9px;
+box-shadow: 0 5px 18px rgba(0,0,0,0.04);
+cursor: pointer;
+}
+
+#profileLogoutBtn:active {
+transform: scale(0.98);
+}
+
+
+/* =========================
+   APPEARANCE MODAL
+========================= */
+
+.appearanceModal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.45);
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.appearanceBox {
+    width: 100%;
+    max-width: 480px;
+    background: #ffffff;
+    border-radius: 24px 24px 0 0;
+    padding: 20px 16px 25px;
+    box-sizing: border-box;
+    animation: appearanceSlideUp 0.25s ease;
+}
+
+@keyframes appearanceSlideUp {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.appearanceHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.appearanceHeader h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #111827;
+}
+
+.appearanceHeader button {
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 12px;
+    background: #f3f4f6;
+    color: #374151;
+    font-size: 17px;
+}
+
+.appearanceSubtitle {
+    margin: 0 0 18px;
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.appearanceOption {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    border: none;
+    background: #f9fafb;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.appearanceOption strong {
+    display: block;
+    font-size: 15px;
+    color: #111827;
+    margin-bottom: 3px;
+}
+
+.appearanceOption span {
+    display: block;
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.appearanceCheck {
+    display: none;
+    font-size: 17px;
+    color: #2563eb;
+}
+
+.appearanceOption.active {
+    background: #eff6ff;
+}
+
+.appearanceOption.active .appearanceCheck {
+    display: block;
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.darkMode {
+    background: #111827;
+    color: #f9fafb;
+}
+
+body.darkMode .profilePage {
+    background: #111827;
+}
+
+body.darkMode .profileHeader h2,
+body.darkMode .profileUserInfo h3 {
+    color: #f9fafb;
+}
+
+body.darkMode .profileUserInfo p {
+    color: #9ca3af;
+}
+
+body.darkMode .profileUserCard,
+body.darkMode .profileMenuItem {
+    background: #1f2937;
+}
+
+body.darkMode .profileMenuText strong {
+    color: #f9fafb;
+}
+
+body.darkMode .profileMenuText span {
+    color: #9ca3af;
+}
+
+body.darkMode .profileHeader button {
+    background: #1f2937;
+    color: #f9fafb;
+}
+
+body.darkMode .appearanceBox {
+    background: #1f2937;
+}
+
+body.darkMode .appearanceHeader h3 {
+    color: #f9fafb;
+}
+
+body.darkMode .appearanceSubtitle {
+    color: #9ca3af;
+}
+
+body.darkMode .appearanceOption {
+    background: #111827;
+}
+
+body.darkMode .appearanceOption strong {
+    color: #f9fafb;
+}
+
+body.darkMode .appearanceOption span {
+    color: #9ca3af;
+}
+
+body.darkMode .appearanceOption.active {
+    background: #172554;
+}
+
+/* =========================
+   DARK MODE - MAIN APP
+========================= */
+
+body.darkMode .page,
+body.darkMode #homePage {
+    background: #111827;
+    color: #f9fafb;
+}
+
+body.darkMode .card,
+body.darkMode .balanceCard,
+body.darkMode .serviceCard,
+body.darkMode .networkCard,
+body.darkMode .fundCard,
+body.darkMode .historyCard {
+    background: #1f2937;
+    color: #f9fafb;
+}
+
+body.darkMode h1,
+body.darkMode h2,
+body.darkMode h3,
+body.darkMode h4,
+body.darkMode p {
+    color: #f9fafb;
+}
+
+body.darkMode .pageTitle p,
+body.darkMode .subtitle,
+body.darkMode .description {
+    color: #9ca3af;
+}
+
+body.darkMode input,
+body.darkMode select,
+body.darkMode textarea {
+    background: #1f2937;
+    color: #f9fafb;
+    border-color: #374151;
+}
+
+body.darkMode input::placeholder,
+body.darkMode textarea::placeholder {
+    color: #9ca3af;
+}
+
+body.darkMode .bottomNav,
+body.darkMode .navbar,
+body.darkMode .topbar {
+    background: #1f2937;
+    color: #f9fafb;
+}
+
+body.darkMode .navItem {
+    color: #9ca3af;
+}
+
+body.darkMode .navItem.active {
+    color: #60a5fa;
+}
+
+body.darkMode .modal,
+body.darkMode .modalBox,
+body.darkMode .pinBox,
+body.darkMode .processingBox,
+body.darkMode .successBox {
+    background: #1f2937;
+    color: #f9fafb;
+}
+
+
+
+/* =========================================================
+      - COMPLETE DARK MODE
+   Add this at the VERY BOTTOM of dash2.css
+========================================================= */
+
+body.darkMode {
+    background: #111827 !important;
+    color: #f9fafb !important;
+}
+
+/* ================= HEADER ================= */
+
+body.darkMode .header {
+    background: #111827 !important;
+    color: #f9fafb !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,.25);
+}
+
+body.darkMode .left h2 {
+    color: #f9fafb !important;
+}
+
+body.darkMode .small {
+    color: #9ca3af !important;
+}
+
+body.darkMode .menu,
+body.darkMode .notify {
+    background: #1f2937 !important;
+    color: #f9fafb !important;
+}
+
+body.darkMode .menu i,
+body.darkMode .notify i {
+    color: #f9fafb !important;
+}
+
+/* ================= WALLET ================= */
+
+body.darkMode .wallet {
+    background: #1f2937 !important;
+    color: #f9fafb !important;
+    box-shadow: 0 10px 25px rgba(0,0,0,.25);
+}
+
+body.darkMode .wallet p {
+    color: #9ca3af !important;
+}
+
+body.darkMode .wallet h1 {
+    color: #f9fafb !important;
+}
+
+/* ================= ACTIONS ================= */
+
+body.darkMode .action {
+    background: #1f2937 !important;
+    color: #f9fafb !important;
+}
+
+body.darkMode .action i,
+body.darkMode .action h4 {
+    color: #f9fafb !important;
+}
+
+body.darkMode .action p {
+    color: #9ca3af !important;
+}
+
+/* ================= SERVICES ================= */
+
+body.darkMode .title,
+body.darkMode .services {
+    color: #f9fafb !important;
+}
+
+body.darkMode .item {
+    background: #1f2937 !important;
+    color: #f9fafb !important;
+}
+
+body.darkMode .item span {
+    color: #f9fafb !important;
+}
+
+body.darkMode .icon {
+    background: #030712 !important;
+    color: #FFD43B !important;
+}
+
+/* ================= BANNER ================= */
+
+body.darkMode .banner {
+    color: #fff !important;
+}
+
+/* ================= HISTORY ================= */
+
+body.darkMode .history,
+body.darkMode .head {
+    color: #f9fafb !important;
+}
+
+body.darkMode .head a {
+    color: #FFD43B !important;
+}
+
+body.darkMode .card {
+    background: #1f2937 !important;
+    color: #f9fafb !important;
+}
+
+body.darkMode .card h4 {
+    color: #f9fafb !important;
+}
+
+body.darkMode .card p {
+    color: #9ca3af !important;
+}
+
+/* ================= ALL PAGES ================= */
+
+body.darkMode .page {
+    background: #111827 !important;
+    color: #f9fafb !important;
+}
+
+/* ================= PAGE HEADER ================= */
+
+body.darkMode .pageHeader {
+    background: #111827 !important;
+    color: #f9fafb !important;
+}
+
+body.darkMode .pageHeader h1,
+body.darkMode .pageHeader h2,
+body.darkMode .pageHeader h3,
+body.darkMode .pageHeader p {
+    color: #f9fafb !important;
+}
+
+body.darkMode .pageHeader button {
+    background: #1f2937 !important;
+    color: #f9fafb !important;
+}
+
+/* ================= BLACK CARD / BANNER ================= */
+
+body.darkMode .blackCard,
+body.darkMode .blackBanner {
+    background: #030712 !important;
+    color: #fff !important;
+}
+
+body.darkMode .blackCard p,
+body.darkMode .blackBanner p {
+    color: #d1d5db !important;
+}
+
+body.darkMode .blackBanner h2 {
+    color: #FFD43B !important;
+}
+
+body.darkMode .wifiIcon {
+    background: #2563eb !important;
+    color: #fff !important;
+}
+
+/* ================= PHONE ================= */
+
+body.darkMode .phoneCard {
+    background: #1f2937 !important;
+    color: #f9fafb !important;
+}
+
+body.darkMode .phoneTop h3 {
+    color: #f9fafb !important;
+}
+
+body.darkMode .phoneInput {
+    background: #111827 !important;
+    color: #f9fafb !important;
+    border-color: #374151 !important;
+}
+
+body.darkMode .phoneInput::placeholder {
+    color: #9ca3af !important;
+}
+
+body.darkMode .phoneHint {
+    color: #9ca3af !important;
+}
+
+body.darkMode .beneficiaryBtn {
+    background: #172554 !important;
+    color: #60a5fa !important;
+}
+
+/* ================= SECTION TITLE ================= */
+
+body.darkMode .sectionTitle {
+    color: #f9fafb !important;
+}
+
+/* ================= NETWORK ================= */
+
+body.darkMode .network,
+body.darkMode .networkCard {
+    background: #1f2937 !important;
+    color: #f9fafb !important;
+    box-shadow: 0 5px 15px rgba(0,0,0,.25);
+}
+
+body.darkMode .network span,
+body.darkMode .networkCard span {
+    color: #f9fafb !important;
+}
+
+body.darkMode .network.active {
+    background: #FFD43B !important;
+    color: #111 !important;
+}
+
+body.darkMode .networkCard.active {
+    background: #172554 !important;
+    border-color: #2563eb !important;
+}
+
+body.darkMode .networkCard.mtn {
+    background: #29250b !important;
+}
+
+body.darkMode .networkCard.airtel {
+    background: #2b1114 !important;
+}
+
+body.darkMode .networkCard.glo,
+body.darkMode .networkCard.ninemobile {
+    background: #0d291b !important;
+}
+
+/* ================= SAVE / USSD ================= */
+
+body.darkMode .saveCard,
+body.darkMode .ussdCard {
+    background: #1f2937 !important;
+    color: #f9fafb !important;
+}
+
+body.darkMode .saveLeft,
+body.darkMode .ussdLeft {
+    color: #f9fafb !important;
+}
+
+body.darkMode .saveLeft h4,
+body.darkMode .ussdLeft h4 {
+    color: #f9fafb !important;
+}
+
+body.darkMode .saveLeft p,
+body.darkMode .ussdLeft p {
+    color: #9ca3af !important;
+}
+
+body.darkMode .saveLeft i,
+body.darkMode .ussdLeft i {
+    color: #60a5fa !important;
+}
+
+body.darkMode .ussdCard button {
+    background: #2563eb !important;
+    color: #fff !important;
+}
+
+/* ================= CATEGORY ================= */
+
+body.darkMode .categoryCard {
+    background: #1f2937 !important;
+    color: #f9fafb !important;
+    border-color: #374151 !important;
+}
+
+body.darkMode .categoryCard.active {
+    background: #030712 !important;
+    color: #FFD43B !important;
+    border-color: #FFD43B !important;
+}
+
+/* ================= DATA PLANS ================= */
+
+body.darkMode .plan,
+body.darkMode .planCard {
+    background: #1f2937 !important;
+    color: #f9fafb !important;
+    border-color: #374151 !important;
+}
+
+body.darkMode .plan h4,
+body.darkMode .planTop h3,
+body.darkMode .planMiddle h3 {
+    color: #f9fafb !important;
+}
+
+body.darkMode .plan p,
+body.darkMode .planValidity,
+body.darkMode .planMiddle small {
+    color: #9ca3af !important;
+}
+
+body.darkMode .plan strong,
+body.darkMode .planPrice,
+body.darkMode .planBottom strong {
+    color: #f9fafb !important;
+}
+
+body.darkMode .planCard.active {
+    border-color: #FFD43B !important;
+}
+
+/* ================= BUTTONS ================= */
+
+body.darkMode .buyButton,
+body.darkMode .confirmPayBtn {
+    background: #FFD43B !important;
+    color: #111 !important;
+}
+
+body.darkMode .payNowBtn,
+body.darkMode #airtimePayNow {
+    background: #2563eb !important;
+    color: #fff !important;
+}
+
+/* ================= QUICK AMOUNT ================= */
+
+body.darkMode .quickAmount button {
+    background: #374151 !important;
+    color: #f9fafb !important;
+}
+
+body.darkMode .quickAmount button.active,
+body.darkMode .quickAmount button:hover {
+    background: #2563eb !important;
+    color: #fff !important;
+}
+
+/* ================= AMOUNT CARD ================= */
+
+body.darkMode .amountCard {
+    background: #1f2937 !important;
+    color: #f9fafb !important;
+}
+
+body.darkMode .amountCard h3 {
+    color: #f9fafb !important;
+}
+
+body.darkMode .amountInput {
+    background: #111827 !important;
+    color: #f9fafb !important;
+}
+
+body.darkMode .amountInput span {
+    color: #f9fafb !important;
+}
+
+body.darkMode .amountInput input {
+    color: #f9fafb !important;
+}
+
+body.darkMode .amountInput input::placeholder {
+    color: #9ca3af !important;
+}
+
+/* ================= SERVICE CARDS ================= */
+
+body.darkMode .serviceCard {
+    background: #1f2937 !important;
+    color: #f9fafb !important;
+}
+
+body.darkMode .serviceText h3 {
+    color: #f9fafb !important;
+}
+
+body.darkMode .serviceText p {
+    color: #9ca3af !important;
+}
+
+body.darkMode .serviceCard .fa-chevron-right {
+    color: #9ca3af !important;
+}
+
+body.darkMode .serviceIcon {
+    background: #FFD43B !important;
+    color: #111 !important;
+}
+
+/* ================= PAY BAR ================= */
+
+body.darkMode .payBar {
+    background: #1f2937 !important;
+    color: #f9fafb !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,.35);
+}
+
+body.darkMode .payInfo h2 {
+    color: #f9fafb !important;
+}
+
+body.darkMode .payInfo span {
+    color: #9ca3af !important;
+}
+
+/* ================= CONFIRM MODAL ================= */
+
+body.darkMode .confirmModal {
+    background: rgba(0,0,0,.70) !important;
+}
+
+body.darkMode .confirmBox {
+    background: #1f2937 !important;
+    color: #f9fafb !important;
+}
+
+body.darkMode .confirmHeader h2 {
+    color: #f9fafb !important;
+}
+
+body.darkMode .confirmHeader p {
+    color: #9ca3af !important;
+}
+
+body.darkMode .confirmHeader button {
+    background: #374151 !important;
+    color: #f9fafb !important;
+}
+
+body.darkMode .confirmAmount {
+    background: #29250b !important;
+    border-color: #665500 !important;
+}
+
+body.darkMode .confirmAmount h3 {
+    color: #f9fafb !important;
+}
+
+body.darkMode .confirmAmount span,
+body.darkMode .confirmAmount small {
+    color: #9ca3af !important;
+}
+
+body.darkMode .confirmNetwork {
+    color: #f9fafb !important;
+}
+
+body.darkMode .confirmNetwork span {
+    color: #f9fafb !important;
+}
+
+body.darkMode .confirmTable {
+    background: #1f2937 !important;
+    border-color: #374151 !important;
+}
+
+body.darkMode .confirmTable div {
+    border-bottom-color: #374151 !important;
+}
+
+body.darkMode .confirmTable span {
+    color: #9ca3af !important;
+}
+
+body.darkMode .confirmTable strong {
+    color: #f9fafb !important;
+}
+
+body.darkMode .cancelPayBtn {
+    color: #9ca3af !important;
+}
+
+/* ================= PIN MODAL ================= */
+
+body.darkMode .pinModal {
+    background: rgba(0,0,0,.70) !important;
+}
+
+body.darkMode .pinBox {
+    background: #1f2937 !important;
+    color: #f9fafb !important;
+}
+
+body.darkMode .pinLogo {
+    background: #030712 !important;
+}
+
+body.darkMode .pinBox h2 {
+    color: #f9fafb !important;
+}
+
+body.darkMode .pinBox p {
+    color: #9ca3af !important;
+}
+
+body.darkMode .pinInput,
+body.darkMode .setPinInput,
+body.darkMode .forgotPinInput {
+    background: #111827 !important;
+    color: #f9fafb !important;
+    border-color: #374151 !important;
+}
+
+body.darkMode .pinInput:focus,
+body.darkMode .setPinInput:focus,
+body.darkMode .forgotPinInput:focus {
+    border-color: #2563eb !important;
+}
+
+body.darkMode #pinError,
+body.darkMode #forgotPinError {
+    color: #f87171 !important;
+}
+
+/* ================= FORGOT PIN ================= */
+
+body.darkMode .forgotPinPassword {
+    background: #111827 !important;
+    color: #f9fafb !important;
+    border-color: #374151 !important;
+}
+
+body.darkMode .forgotPinPassword::placeholder {
+    color: #9ca3af !important;
+}
+
+body.darkMode .forgotPinBtn {
+    color: #60a5fa !important;
+}
+
+/* ================= PROCESSING ================= */
+
+body.darkMode .processingModal {
+    background: rgba(0,0,0,.55) !important;
+}
+
+body.darkMode .processingBox h2 {
+    color: #f9fafb !important;
+}
+
+body.darkMode .processingBox p {
+    color: #9ca3af !important;
+}
+
+body.darkMode .processingLogo {
+    background: #030712 !important;
+}
+
+/* ================= SUCCESS ================= */
+
+body.darkMode .successModal {
+    background: rgba(0,0,0,.75) !important;
+}
+
+body.darkMode .successBox {
+    background: #1f2937 !important;
+    color: #f9fafb !important;
+}
+
+body.darkMode .successBox h2,
+body.darkMode .successBox h3,
+body.darkMode .successBox p {
+    color: #f9fafb !important;
+}
+
+body.darkMode .successBox button {
+    background: #2563eb !important;
+    color: #fff !important;
+}
+
+/* ================= PIN SUCCESS ================= */
+
+body.darkMode .donePinBtn {
+    background: #030712 !important;
+    color: #f9fafb !important;
+}
+
+/* ================= FULL HISTORY ================= */
+
+body.darkMode .historyFilter {
+    background: #374151 !important;
+    color: #d1d5db !important;
+}
+
+body.darkMode .historyFilter.active {
+    background: #2563eb !important;
+    color: #fff !important;
+}
+
+body.darkMode .historyTransaction {
+    background: #1f2937 !important;
+    border-color: #374151 !important;
+    color: #f9fafb !important;
+}
+
+body.darkMode .historyTransactionIcon.data {
+    background: #172554 !important;
+    color: #60a5fa !important;
+}
+
+body.darkMode .historyTransactionIcon.airtime {
+    background: #052e1a !important;
+    color: #4ade80 !important;
+}
+
+body.darkMode .historyTransactionIcon.pin {
+    background: #422006 !important;
+    color: #fbbf24 !important;
+}
+
+body.darkMode .historyTransactionIcon.fund {
+    background: #052e16 !important;
+    color: #4ade80 !important;
+}
+
+/* ================= BOTTOM NAV ================= */
+
+body.darkMode .bottomNav {
+    background: #1f2937 !important;
+    color: #f9fafb !important;
+    box-shadow: 0 -5px 20px rgba(0,0,0,.30);
+}
+
+body.darkMode .navItem {
+    color: #9ca3af !important;
+}
+
+body.darkMode .navItem.active {
+    color: #FFD43B !important;
+}
+
+/* ================= ERRORS ================= */
+
+body.darkMode #airtimePhoneError,
+body.darkMode #amountError,
+body.darkMode #phoneError {
+    color: #f87171 !important;
+}/* =========================================================
+   GE DATA - COMPLETE DARK MODE
+   Add this at the VERY BOTTOM of dash2.css
+========================================================= */
+
+body.darkMode {
+    background: #111827 !important;
+    color: #f9fafb !important;
+}
+
+/* ================= HEADER ================= */
+
+body.darkMode .header {
+    background: #111827 !important;
+    color: #f9fafb !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,.25);
+}
+
+body.darkMode .left h2 {
+    color: #f9fafb !important;
+}
+
+body.darkMode .small {
+    color: #9ca3af !important;
+}
+
+body.darkMode .menu,
+body.darkMode .notify {
+    background: #1f2937 !important;
+    color: #f9fafb !important;
+}
+
+body.darkMode .menu i,
+body.darkMode .notify i {
+    color: #f9fafb !important;
+}
+
+/* ================= WALLET ================= */
+
+body.darkMode .wallet {
+    background: #1f2937 !important;
+    color: #f9fafb !important;
+    box-shadow: 0 10px 25px rgba(0,0,0,.25);
+}
+
+body.darkMode .wallet p {
+    color: #9ca3af !important;
+}
+
+body.darkMode .wallet h1 {
+    color: #f9fafb !important;
+}
+
+/* ================= ACTIONS ================= */
+
+body.darkMode .action {
+    background: #1f2937 !important;
+    color: #f9fafb !important;
+}
+
+body.darkMode .action i,
+body.darkMode .action h4 {
+    color: #f9fafb !important;
+}
+
+body.darkMode .action p {
+    color: #9ca3af !important;
+}
+
+/* ================= SERVICES ================= */
+
+body.darkMode .title,
+body.darkMode .services {
+    color: #f9fafb !important;
+}
+
+body.darkMode .item {
+    background: #1f2937 !important;
+    color: #f9fafb !important;
+}
+
+body.darkMode .item span {
+    color: #f9fafb !important;
+}
+
+body.darkMode .icon {
+    background: #030712 !important;
+    color: #FFD43B !important;
+}
+
+/* ================= BANNER ================= */
+
+body.darkMode .banner {
+    color: #fff !important;
+}
+
+/* ================= HISTORY ================= */
+
+body.darkMode .history,
+body.darkMode .head {
+    color: #f9fafb !important;
+}
+
+body.darkMode .head a {
+    color: #FFD43B !important;
+}
+
+body.darkMode .card {
+    background: #1f2937 !important;
+    color: #f9fafb !important;
+}
+
+body.darkMode .card h4 {
+    color: #f9fafb !important;
+}
+
+body.darkMode .card p {
+    color: #9ca3af !important;
+}
+
+/* ================= ALL PAGES ================= */
+
+body.darkMode .page {
+    background: #111827 !important;
+    color: #f9fafb !important;
+}
+
+/* ================= PAGE HEADER ================= */
+
+body.darkMode .pageHeader {
+    background: #111827 !important;
+    color: #f9fafb !important;
+}
+
+body.darkMode .pageHeader h1,
+body.darkMode .pageHeader h2,
+body.darkMode .pageHeader h3,
+body.darkMode .pageHeader p {
+    color: #f9fafb !important;
+}
+
+body.darkMode .pageHeader button {
+    background: #1f2937 !important;
+    color: #f9fafb !important;
+}
+
+/* ================= BLACK CARD / BANNER ================= */
+
+body.darkMode .blackCard,
+body.darkMode .blackBanner {
+    background: #030712 !important;
+    color: #fff !important;
+}
+
+body.darkMode .blackCard p,
+body.darkMode .blackBanner p {
+    color: #d1d5db !important;
+}
+
+body.darkMode .blackBanner h2 {
+    color: #FFD43B !important;
+}
+
+body.darkMode .wifiIcon {
+    background: #2563eb !important;
+    color: #fff !important;
+}
+
+/* ================= PHONE ================= */
+
+body.darkMode .phoneCard {
+    background: #1f2937 !important;
+    color: #f9fafb !important;
+}
+
+body.darkMode .phoneTop h3 {
+    color: #f9fafb !important;
+}
+
+body.darkMode .phoneInput {
+    background: #111827 !important;
+    color: #f9fafb !important;
+    border-color: #374151 !important;
+}
+
+body.darkMode .phoneInput::placeholder {
+    color: #9ca3af !important;
+}
+
+body.darkMode .phoneHint {
+    color: #9ca3af !important;
+}
+
+body.darkMode .beneficiaryBtn {
+    background: #172554 !important;
+    color: #60a5fa !important;
+}
+
+/* ================= SECTION TITLE ================= */
+
+body.darkMode .sectionTitle {
+    color: #f9fafb !important;
+}
+
+/* ================= NETWORK ================= */
+
+body.darkMode .network,
+body.darkMode .networkCard {
+    background: #1f2937 !important;
+    color: #f9fafb !important;
+    box-shadow: 0 5px 15px rgba(0,0,0,.25);
+}
+
+body.darkMode .network span,
+body.darkMode .networkCard span {
+    color: #f9fafb !important;
+}
+
+body.darkMode .network.active {
+    background: #FFD43B !important;
+    color: #111 !important;
+}
+
+body.darkMode .networkCard.active {
+    background: #172554 !important;
+    border-color: #2563eb !important;
+}
+
+body.darkMode .networkCard.mtn {
+    background: #29250b !important;
+}
+
+body.darkMode .networkCard.airtel {
+    background: #2b1114 !important;
+}
+
+body.darkMode .networkCard.glo,
+body.darkMode .networkCard.ninemobile {
+    background: #0d291b !important;
+}
+
+/* ================= SAVE / USSD ================= */
+
+body.darkMode .saveCard,
+body.darkMode .ussdCard {
+    background: #1f2937 !important;
+    color: #f9fafb !important;
+}
+
+body.darkMode .saveLeft,
+body.darkMode .ussdLeft {
+    color: #f9fafb !important;
+}
+
+body.darkMode .saveLeft h4,
+body.darkMode .ussdLeft h4 {
+    color: #f9fafb !important;
+}
+
+body.darkMode .saveLeft p,
+body.darkMode .ussdLeft p {
+    color: #9ca3af !important;
+}
+
+body.darkMode .saveLeft i,
+body.darkMode .ussdLeft i {
+    color: #60a5fa !important;
+}
+
+body.darkMode .ussdCard button {
+    background: #2563eb !important;
+    color: #fff !important;
+}
+
+/* ================= CATEGORY ================= */
+
+body.darkMode .categoryCard {
+    background: #1f2937 !important;
+    color: #f9fafb !important;
+    border-color: #374151 !important;
+}
+
+body.darkMode .categoryCard.active {
+    background: #030712 !important;
+    color: #FFD43B !important;
+    border-color: #FFD43B !important;
+}
+
+/* ================= DATA PLANS ================= */
+
+body.darkMode .plan,
+body.darkMode .planCard {
+    background: #1f2937 !important;
+    color: #f9fafb !important;
+    border-color: #374151 !important;
+}
+
+body.darkMode .plan h4,
+body.darkMode .planTop h3,
+body.darkMode .planMiddle h3 {
+    color: #f9fafb !important;
+}
+
+body.darkMode .plan p,
+body.darkMode .planValidity,
+body.darkMode .planMiddle small {
+    color: #9ca3af !important;
+}
+
+body.darkMode .plan strong,
+body.darkMode .planPrice,
+body.darkMode .planBottom strong {
+    color: #f9fafb !important;
+}
+
+body.darkMode .planCard.active {
+    border-color: #FFD43B !important;
+}
+
+/* ================= BUTTONS ================= */
+
+body.darkMode .buyButton,
+body.darkMode .confirmPayBtn {
+    background: #FFD43B !important;
+    color: #111 !important;
+}
+
+body.darkMode .payNowBtn,
+body.darkMode #airtimePayNow {
+    background: #2563eb !important;
+    color: #fff !important;
+}
+
+/* ================= QUICK AMOUNT ================= */
+
+body.darkMode .quickAmount button {
+    background: #374151 !important;
+    color: #f9fafb !important;
+}
+
+body.darkMode .quickAmount button.active,
+body.darkMode .quickAmount button:hover {
+    background: #2563eb !important;
+    color: #fff !important;
+}
+
+/* ================= AMOUNT CARD ================= */
+
+body.darkMode .amountCard {
+    background: #1f2937 !important;
+    color: #f9fafb !important;
+}
+
+body.darkMode .amountCard h3 {
+    color: #f9fafb !important;
+}
+
+body.darkMode .amountInput {
+    background: #111827 !important;
+    color: #f9fafb !important;
+}
+
+body.darkMode .amountInput span {
+    color: #f9fafb !important;
+}
+
+body.darkMode .amountInput input {
+    color: #f9fafb !important;
+}
+
+body.darkMode .amountInput input::placeholder {
+    color: #9ca3af !important;
+}
+
+/* ================= SERVICE CARDS ================= */
+
+body.darkMode .serviceCard {
+    background: #1f2937 !important;
+    color: #f9fafb !important;
+}
+
+body.darkMode .serviceText h3 {
+    color: #f9fafb !important;
+}
+
+body.darkMode .serviceText p {
+    color: #9ca3af !important;
+}
+
+body.darkMode .serviceCard .fa-chevron-right {
+    color: #9ca3af !important;
+}
+
+body.darkMode .serviceIcon {
+    background: #FFD43B !important;
+    color: #111 !important;
+}
+
+/* ================= PAY BAR ================= */
+
+body.darkMode .payBar {
+    background: #1f2937 !important;
+    color: #f9fafb !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,.35);
+}
+
+body.darkMode .payInfo h2 {
+    color: #f9fafb !important;
+}
+
+body.darkMode .payInfo span {
+    color: #9ca3af !important;
+}
+
+/* ================= CONFIRM MODAL ================= */
+
+body.darkMode .confirmModal {
+    background: rgba(0,0,0,.70) !important;
+}
+
+body.darkMode .confirmBox {
+    background: #1f2937 !important;
+    color: #f9fafb !important;
+}
+
+body.darkMode .confirmHeader h2 {
+    color: #f9fafb !important;
+}
+
+body.darkMode .confirmHeader p {
+    color: #9ca3af !important;
+}
+
+body.darkMode .confirmHeader button {
+    background: #374151 !important;
+    color: #f9fafb !important;
+}
+
+body.darkMode .confirmAmount {
+    background: #29250b !important;
+    border-color: #665500 !important;
+}
+
+body.darkMode .confirmAmount h3 {
+    color: #f9fafb !important;
+}
+
+body.darkMode .confirmAmount span,
+body.darkMode .confirmAmount small {
+    color: #9ca3af !important;
+}
+
+body.darkMode .confirmNetwork {
+    color: #f9fafb !important;
+}
+
+body.darkMode .confirmNetwork span {
+    color: #f9fafb !important;
+}
+
+body.darkMode .confirmTable {
+    background: #1f2937 !important;
+    border-color: #374151 !important;
+}
+
+body.darkMode .confirmTable div {
+    border-bottom-color: #374151 !important;
+}
+
+body.darkMode .confirmTable span {
+    color: #9ca3af !important;
+}
+
+body.darkMode .confirmTable strong {
+    color: #f9fafb !important;
+}
+
+body.darkMode .cancelPayBtn {
+    color: #9ca3af !important;
+}
+
+/* ================= PIN MODAL ================= */
+
+body.darkMode .pinModal {
+    background: rgba(0,0,0,.70) !important;
+}
+
+body.darkMode .pinBox {
+    background: #1f2937 !important;
+    color: #f9fafb !important;
+}
+
+body.darkMode .pinLogo {
+    background: #030712 !important;
+}
+
+body.darkMode .pinBox h2 {
+    color: #f9fafb !important;
+}
+
+body.darkMode .pinBox p {
+    color: #9ca3af !important;
+}
+
+body.darkMode .pinInput,
+body.darkMode .setPinInput,
+body.darkMode .forgotPinInput {
+    background: #111827 !important;
+    color: #f9fafb !important;
+    border-color: #374151 !important;
+}
+
+body.darkMode .pinInput:focus,
+body.darkMode .setPinInput:focus,
+body.darkMode .forgotPinInput:focus {
+    border-color: #2563eb !important;
+}
+
+body.darkMode #pinError,
+body.darkMode #forgotPinError {
+    color: #f87171 !important;
+}
+
+/* ================= FORGOT PIN ================= */
+
+body.darkMode .forgotPinPassword {
+    background: #111827 !important;
+    color: #f9fafb !important;
+    border-color: #374151 !important;
+}
+
+body.darkMode .forgotPinPassword::placeholder {
+    color: #9ca3af !important;
+}
+
+body.darkMode .forgotPinBtn {
+    color: #60a5fa !important;
+}
+
+/* ================= PROCESSING ================= */
+
+body.darkMode .processingModal {
+    background: rgba(0,0,0,.55) !important;
+}
+
+body.darkMode .processingBox h2 {
+    color: #f9fafb !important;
+}
+
+body.darkMode .processingBox p {
+    color: #9ca3af !important;
+}
+
+body.darkMode .processingLogo {
+    background: #030712 !important;
+}
+
+/* ================= SUCCESS ================= */
+
+body.darkMode .successModal {
+    background: rgba(0,0,0,.75) !important;
+}
+
+body.darkMode .successBox {
+    background: #1f2937 !important;
+    color: #f9fafb !important;
+}
+
+body.darkMode .successBox h2,
+body.darkMode .successBox h3,
+body.darkMode .successBox p {
+    color: #f9fafb !important;
+}
+
+body.darkMode .successBox button {
+    background: #2563eb !important;
+    color: #fff !important;
+}
+
+/* ================= PIN SUCCESS ================= */
+
+body.darkMode .donePinBtn {
+    background: #030712 !important;
+    color: #f9fafb !important;
+}
+
+/* ================= FULL HISTORY ================= */
+
+body.darkMode .historyFilter {
+    background: #374151 !important;
+    color: #d1d5db !important;
+}
+
+body.darkMode .historyFilter.active {
+    background: #2563eb !important;
+    color: #fff !important;
+}
+
+body.darkMode .historyTransaction {
+    background: #1f2937 !important;
+    border-color: #374151 !important;
+    color: #f9fafb !important;
+}
+
+body.darkMode .historyTransactionIcon.data {
+    background: #172554 !important;
+    color: #60a5fa !important;
+}
+
+body.darkMode .historyTransactionIcon.airtime {
+    background: #052e1a !important;
+    color: #4ade80 !important;
+}
+
+body.darkMode .historyTransactionIcon.pin {
+    background: #422006 !important;
+    color: #fbbf24 !important;
+}
+
+body.darkMode .historyTransactionIcon.fund {
+    background: #052e16 !important;
+    color: #4ade80 !important;
+}
+
+/* ================= BOTTOM NAV ================= */
+
+body.darkMode .bottomNav {
+    background: #1f2937 !important;
+    color: #f9fafb !important;
+    box-shadow: 0 -5px 20px rgba(0,0,0,.30);
+}
+
+body.darkMode .navItem {
+    color: #9ca3af !important;
+}
+
+body.darkMode .navItem.active {
+    color: #FFD43B !important;
+}
+
+/* ================= ERRORS ================= */
+
+body.darkMode #airtimePhoneError,
+body.darkMode #amountError,
+body.darkMode #phoneError {
+    color: #f87171 !important;
+}
+
+
+/* =========================================================
+   DARK MODE - FUND REQUEST PAGE
+========================================================= */
+
+body.darkMode .fundRequestCard {
+    background: #1f2937 !important;
+    color: #f9fafb !important;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .25);
+}
+
+body.darkMode .fundWalletIcon {
+    background: #172554 !important;
+    color: #60a5fa !important;
+}
+
+body.darkMode .fundRequestCard h3 {
+    color: #f9fafb !important;
+}
+
+body.darkMode .fundRequestCard > p {
+    color: #9ca3af !important;
+}
+
+body.darkMode .fundAmountBox {
+    background: #111827 !important;
+    border-color: #374151 !important;
+}
+
+body.darkMode .fundAmountBox span {
+    color: #60a5fa !important;
+}
+
+body.darkMode .fundAmountBox input {
+    background: transparent !important;
+    color: #f9fafb !important;
+}
+
+body.darkMode .fundAmountBox input::placeholder {
+    color: #6b7280 !important;
+}
+
+body.darkMode .fundRequestBtn {
+    background: #2563eb !important;
+    color: #fff !important;
+}
+
+
+/* =========================================================
+   DARK MODE - CUSTOM APP ALERT
+========================================================= */
+
+body.darkMode .appAlert {
+    background: #1f2937 !important;
+    color: #f9fafb !important;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, .40);
+}
+
+body.darkMode .appAlertIcon {
+    background: #052e1a !important;
+    color: #4ade80 !important;
+}
+
+body.darkMode .appAlertContent h3 {
+    color: #f9fafb !important;
+}
+
+body.darkMode .appAlertContent p {
+    color: #9ca3af !important;
+}
+
+body.darkMode .appAlertClose {
+    color: #9ca3af !important;
+}
+
+body.darkMode .appAlertClose:hover {
+    background: #374151 !important;
+    color: #f9fafb !important;
+}
+
+
+/* =========================================================
+   DARK MODE - FUND REQUEST STATUS
+========================================================= */
+
+body.darkMode .fundStatusCard {
+    background: #1f2937 !important;
+    color: #f9fafb !important;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .25);
+}
+
+body.darkMode .fundStatusHeader h3 {
+    color: #f9fafb !important;
+}
+
+body.darkMode #fundRequestStatus {
+    background: #111827 !important;
+    color: #9ca3af !important;
+}
+
+body.darkMode .fundStatusItem strong {
+    color: #f9fafb !important;
+}
+
+body.darkMode .fundStatusItem span {
+    color: #9ca3af !important;
+}
+
+/* STATUS BADGES */
+
+body.darkMode .fundStatusBadge.pending {
+    background: #431407 !important;
+    color: #fb923c !important;
+}
+
+body.darkMode .fundStatusBadge.approved {
+    background: #052e1a !important;
+    color: #4ade80 !important;
+}
+
+body.darkMode .fundStatusBadge.rejected {
+    background: #450a0a !important;
+    color: #f87171 !important;
+}
+
+
+/* ==========================================
+   LOGOUT CONFIRMATION MODAL
+========================================== */
+
+.logoutModal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    padding: 20px;
+}
+
+.logoutCard {
+    width: 100%;
+    max-width: 360px;
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 28px 22px 22px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    animation: logoutCardIn 0.2s ease;
+}
+
+.logoutIcon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 16px;
+    border-radius: 50%;
+    background: #eff6ff;
+    color: #2563eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+}
+
+.logoutCard h2 {
+    margin: 0 0 8px;
+    font-size: 22px;
+    color: #111827;
+}
+
+.logoutCard p {
+    margin: 0 auto 24px;
+    color: #6b7280;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.logoutActions {
+    display: flex;
+    gap: 12px;
+}
+
+.logoutActions button {
+    flex: 1;
+    height: 48px;
+    border: none;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.logoutCancelBtn {
+    background: #f3f4f6;
+    color: #374151;
+}
+
+.logoutConfirmBtn {
+    background: #2563eb;
+    color: #ffffff;
+}
+
+.logoutActions button:active {
+    transform: scale(0.97);
+}
+
+@keyframes logoutCardIn {
+
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+/* ================= HISTORY SEARCH ================= */
+
+.historySearchBox {
+    width: 100%;
+    height: 52px;
+    margin: 14px 0 12px;
+
+    display: flex;
+    align-items: center;
+
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 15px;
+
+    padding: 0 14px;
+
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+
+    box-sizing: border-box;
+}
+
+.historySearchBox > i {
+    color: #9ca3af;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.historySearchBox input {
+    flex: 1;
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    font-size: 14px;
+    color: #111827;
+}
+
+.historySearchBox input::placeholder {
+    color: #9ca3af;
+}
+
+.historySearchBox:focus-within {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+#clearHistorySearch {
+    width: 30px;
+    height: 30px;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #f3f4f6;
+    color: #6b7280;
+
+    cursor: pointer;
+}
+
+#clearHistorySearch:active {
+    transform: scale(0.92);
+}
+
+/* ================= HISTORY SEARCH - DARK MODE ================= */
+
+body.dark .historySearchBox {
+    background: #111827;
+    border-color: #374151;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.20);
+}
+
+body.dark .historySearchBox > i {
+    color: #9ca3af;
+}
+
+body.dark .historySearchBox input {
+    color: #f9fafb;
+}
+
+body.dark .historySearchBox input::placeholder {
+    color: #6b7280;
+}
+
+body.dark .historySearchBox:focus-within {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+
+body.dark #clearHistorySearch {
+    background: #1f2937;
+    color: #d1d5db;
+}

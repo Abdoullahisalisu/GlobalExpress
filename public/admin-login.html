@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GE DATA - Admin Login</title>
+
+<link rel="stylesheet" href="admin-login.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="adminLogin">
+
+    <div class="adminLogo">
+
+        <img src="logo.png" alt="GE DATA">
+
+        <h1>GE DATA</h1>
+
+        <p>Admin Control Panel</p>
+
+    </div>
+
+    <form id="adminLoginForm">
+
+        <div class="inputBox">
+
+            <i class="fa-solid fa-envelope"></i>
+
+            <input
+                type="email"
+                id="adminEmail"
+                placeholder="Admin Email"
+                required
+            >
+
+        </div>
+
+        <div class="inputBox">
+
+            <i class="fa-solid fa-lock"></i>
+
+            <input
+                type="password"
+                id="adminPassword"
+                placeholder="Password"
+                required
+            >
+
+            <i
+                class="fa-solid fa-eye eye"
+                id="adminEye">
+            </i>
+
+        </div>
+
+        <button
+            type="submit"
+            id="adminLoginBtn">
+
+            Login to Admin
+
+        </button>
+
+    </form>
+
+    <p id="adminMessage"></p>
+
+</div>
+
+<script src="admin-login.js"></script>
+
+</body>
+</html>

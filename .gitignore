@@ -1,0 +1,10 @@
+.env
+node_modules/
+*.tar.gz
+global-express-data-firebase-adminsdk-*.json
+public-backup/
+public/GE_DATA_FRONTEND.zip
+public/*-backup*
+public/*-broken*
+server-backup*.js
+server-before-users.js
