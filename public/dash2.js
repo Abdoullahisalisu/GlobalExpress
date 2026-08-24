@@ -4532,3 +4532,18 @@ if (walletNav) {
     });
 
 }
+
+
+// ===============================
+// CUSTOMER SUPPORT - WHATSAPP
+// ===============================
+const profileSupportBtn = document.getElementById("profileSupportBtn");
+
+if (profileSupportBtn) {
+    profileSupportBtn.addEventListener("click", () => {
+        window.open(
+            "https://wa.me/2348080978733",
+            "_blank"
+        );
+    });
+}
