@@ -259,18 +259,31 @@ services.forEach(item => {
 
 // ================= PAGE =================
 
-function openPage(page) {
+function openPage(page, addHistory = true) {
 
-    document.getElementById("homePage").style.display = "none";
+    // Save page in browser history
+    if (addHistory) {
+        history.pushState({ page: page }, "", "#" + page);
+    }
 
+    // Hide Dashboard
+    const homePage = document.getElementById("homePage");
+
+    if (homePage) {
+        homePage.style.display = "none";
+    }
+
+    // Hide all pages
     document.querySelectorAll(".page").forEach(p => {
-
         p.style.display = "none";
-
     });
 
-    document.getElementById(page).style.display = "block";
+    // Show selected page
+    const targetPage = document.getElementById(page);
 
+    if (targetPage) {
+        targetPage.style.display = "block";
+    }
 }
 
 function goHome() {
@@ -4547,3 +4560,19 @@ if (profileSupportBtn) {
         );
     });
 }
+
+// ================= ANDROID / PHONE BACK =================
+
+window.addEventListener("popstate", function (event) {
+
+    if (event.state && event.state.page) {
+
+        openPage(event.state.page, false);
+
+    } else {
+
+        goHome();
+
+    }
+
+});
