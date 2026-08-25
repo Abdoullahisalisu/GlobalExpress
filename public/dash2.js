@@ -366,6 +366,9 @@ ninemobile:[
 if(phoneInput){
 
 phoneInput.addEventListener("input",()=>{
+    
+    phoneInput.value = phoneInput.value.replace(/\D/g, "").slice(0, 11);
+    
     phoneError.innerHTML = "";
     const error=document.getElementById("phoneError");
 
@@ -1141,6 +1144,9 @@ if(airtimePhone){
 
 airtimePhone.addEventListener("input",()=>{
 
+airtimePhone.value = airtimePhone.value
+    .replace(/\D/g, "")
+    .slice(0, 11);
 
 let error =
 document.getElementById(
