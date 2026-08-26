@@ -11,14 +11,35 @@ function getAuthToken(){
     return localStorage.getItem(AUTH_TOKEN_KEY) || "";
 }
 
-async function apiFetch(path, options = {}){
+// ==========================================
+// CHECK LOGIN SESSION
+// ==========================================
+
+(function checkLoginSession() {
+
+    const token = localStorage.getItem("ge_token");
+
+    if (!token) {
+
+        document.body.style.display = "none";
+
+        window.location.replace("/auth.html");
+
+        return;
+    }
+
+})();
+
+async function apiFetch(path, options = {}) {
+
     const headers = {
         "Content-Type": "application/json",
         ...(options.headers || {})
     };
 
     const token = getAuthToken();
-    if(token){
+
+    if (token) {
         headers.Authorization = `Bearer ${token}`;
     }
 
@@ -28,14 +49,47 @@ async function apiFetch(path, options = {}){
     });
 
     let data = {};
+
     try {
         data = await response.json();
     } catch {
-        data = { success:false, message:"Invalid server response" };
+        data = {
+            success: false,
+            message: "Invalid server response"
+        };
     }
 
-    if(!response.ok){
-        throw new Error(data.message || "Server request failed");
+    // ==========================================
+    // SESSION EXPIRED / UNAUTHORIZED
+    // ==========================================
+
+    if (response.status === 401 || response.status === 403) {
+
+        console.warn("Session expired. Redirecting to login...");
+
+        // Clear old login data
+        localStorage.removeItem("ge_token");
+        localStorage.removeItem("ge_user");
+
+        // Prevent dashboard from remaining visible
+        document.body.style.display = "none";
+
+        // Send user back to login page
+        window.location.replace("/auth.html");
+
+        return;
+    }
+
+    // ==========================================
+    // OTHER SERVER ERRORS
+    // ==========================================
+
+    if (!response.ok) {
+
+        throw new Error(
+            data.message || "Server request failed"
+        );
+
     }
 
     return data;
