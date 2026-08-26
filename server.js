@@ -4,26 +4,12 @@ const express = require("express");
 const db = require("./firebase");
 const crypto = require("crypto");
 const bcrypt = require("bcryptjs");
-const nodemailer = require("nodemailer");
 
-const mailTransporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 465,
-    secure: true,
-    family: 4,
-    auth: {
-        user: process.env.MAIL_USER,
-        pass: process.env.MAIL_PASS
-    }
-});
+const { Resend } = require("resend");
 
-mailTransporter.verify((error, success) => {
-    if (error) {
-        console.error("Email connection failed:", error.message);
-    } else {
-        console.log("Email service is ready");
-    }
-});
+const resend = new Resend(
+    process.env.RESEND_API_KEY
+);
 
 const app = express();
 
@@ -445,42 +431,42 @@ app.post("/forgot-password", async (req, res) => {
         const resetLink =
             `${process.env.APP_URL || "http://localhost:3000"}/reset-password.html?token=${resetToken}`;
 
-        await mailTransporter.sendMail({
-            from: `"GE DATA" <${process.env.MAIL_USER}>`,
-            to: email,
-            subject: "GE DATA Password Reset",
-            html: `
-                <div style="font-family:Arial,sans-serif;max-width:600px;margin:auto;">
-                    <h2>GE DATA Password Reset</h2>
+        await resend.emails.send({
+    from: "GE DATA <onboarding@resend.dev>",
+    to: email,
+    subject: "GE DATA Password Reset",
+    html: `
+        <div style="font-family:Arial,sans-serif;max-width:600px;margin:auto;">
+            <h2>GE DATA Password Reset</h2>
 
-                    <p>We received a request to reset your GE DATA password.</p>
+            <p>We received a request to reset your GE DATA password.</p>
 
-                    <p>
-                        Click the button below to create a new password.
-                    </p>
+            <p>
+                Click the button below to create a new password.
+            </p>
 
-                    <p>
-                        <a href="${resetLink}"
-                           style="
-                           display:inline-block;
-                           padding:12px 20px;
-                           background:#2563eb;
-                           color:white;
-                           text-decoration:none;
-                           border-radius:8px;
-                           ">
-                            Reset Password
-                        </a>
-                    </p>
+            <p>
+                <a href="${resetLink}"
+                   style="
+                   display:inline-block;
+                   padding:12px 20px;
+                   background:#2563eb;
+                   color:white;
+                   text-decoration:none;
+                   border-radius:8px;
+                   ">
+                    Reset Password
+                </a>
+            </p>
 
-                    <p>This link will expire in 15 minutes.</p>
+            <p>This link will expire in 15 minutes.</p>
 
-                    <p>
-                        If you did not request this, you can safely ignore this email.
-                    </p>
-                </div>
-            `
-        });
+            <p>
+                If you did not request this, you can safely ignore this email.
+            </p>
+        </div>
+    `
+});
 
         res.json({
             success: true,
