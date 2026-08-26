@@ -370,55 +370,195 @@ signupBtn.onclick = async () => {
 // FORGOT PASSWORD
 // ================================
 
+// ================================
+// FORGOT PASSWORD MODAL
+// ================================
+
 const forgotLink = document.querySelector(".forgot");
 
+const forgotPasswordModal =
+    document.getElementById("forgotPasswordModal");
+
+const forgotPasswordEmail =
+    document.getElementById("forgotPasswordEmail");
+
+const sendResetLinkBtn =
+    document.getElementById("sendResetLinkBtn");
+
+const cancelForgotPasswordBtn =
+    document.getElementById("cancelForgotPasswordBtn");
+
+const forgotPasswordError =
+    document.getElementById("forgotPasswordError");
+
+
+// ================================
+// OPEN FORGOT PASSWORD
+// ================================
+
 if (forgotLink) {
-    forgotLink.addEventListener("click", async (e) => {
+
+    forgotLink.addEventListener("click", (e) => {
+
         e.preventDefault();
 
-        const email = prompt(
-            "Enter your GE DATA account email:"
-        );
+        forgotPasswordModal.style.display = "flex";
+
+        forgotPasswordEmail.value = "";
+
+        forgotPasswordError.textContent = "";
+
+        setTimeout(() => {
+            forgotPasswordEmail.focus();
+        }, 100);
+
+    });
+
+}
+
+
+// ================================
+// CANCEL
+// ================================
+
+if (cancelForgotPasswordBtn) {
+
+    cancelForgotPasswordBtn.onclick = () => {
+
+        forgotPasswordModal.style.display = "none";
+
+        forgotPasswordEmail.value = "";
+
+        forgotPasswordError.textContent = "";
+
+    };
+
+}
+
+
+// ================================
+// SEND RESET LINK
+// ================================
+
+if (sendResetLinkBtn) {
+
+    sendResetLinkBtn.onclick = async () => {
+
+        const email =
+            forgotPasswordEmail.value.trim().toLowerCase();
+
+        forgotPasswordError.textContent = "";
+
+        forgotPasswordError.style.color = "";
+
 
         if (!email) {
+
+            forgotPasswordError.textContent =
+                "Please enter your email address.";
+
+            forgotPasswordEmail.focus();
+
             return;
         }
 
+
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+
+            forgotPasswordError.textContent =
+                "Please enter a valid email address.";
+
+            forgotPasswordEmail.focus();
+
+            return;
+        }
+
+
+        sendResetLinkBtn.disabled = true;
+
+        sendResetLinkBtn.innerHTML =
+            '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+
+
         try {
-            forgotLink.textContent = "Sending...";
 
-            const response = await fetch("/forgot-password", {
-                method: "POST",
+            const response = await fetch(
+                "/forgot-password",
+                {
+                    method: "POST",
 
-                headers: {
-                    "Content-Type": "application/json"
-                },
+                    headers: {
+                        "Content-Type":
+                            "application/json"
+                    },
 
-                body: JSON.stringify({
-                    email: email.trim()
-                })
-            });
-
-            const data = await response.json();
-
-            alert(
-                data.message ||
-                "If this email exists, a reset link has been sent."
+                    body: JSON.stringify({
+                        email: email
+                    })
+                }
             );
+
+
+            const data =
+                await response.json();
+
+
+            if (!response.ok) {
+
+                throw new Error(
+                    data.message ||
+                    "Unable to send reset link."
+                );
+
+            }
+
+
+            forgotPasswordError.style.color =
+                "green";
+
+            forgotPasswordError.textContent =
+                "Reset link sent. Please check your Gmail.";
+
+
+            setTimeout(() => {
+
+                forgotPasswordModal.style.display =
+                    "none";
+
+                forgotPasswordEmail.value = "";
+
+                forgotPasswordError.textContent = "";
+
+                forgotPasswordError.style.color = "";
+
+            }, 2500);
+
 
         } catch (error) {
-            console.error(error);
 
-            alert(
-                "Unable to connect to server. Please try again."
+            console.error(
+                "FORGOT PASSWORD ERROR:",
+                error
             );
 
-        } finally {
-            forgotLink.textContent = "Forgot Password?";
-        }
-    });
-}
+            forgotPasswordError.style.color =
+                "#dc2626";
 
+            forgotPasswordError.textContent =
+                "Unable to send reset link. Please try again.";
+
+        } finally {
+
+            sendResetLinkBtn.disabled = false;
+
+            sendResetLinkBtn.innerHTML =
+                "Send Reset Link";
+
+        }
+
+    };
+
+}
 
 // ================================
 // CUSTOM UI ALERT SYSTEM

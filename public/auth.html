@@ -321,6 +321,59 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 </div>
 
+<!-- ================= FORGOT PASSWORD MODAL ================= -->
+
+<div id="forgotPasswordModal" class="forgotPasswordModal">
+
+    <div class="forgotPasswordBox">
+
+        <div class="forgotPasswordLogo">
+            <img src="logo.png" alt="GE DATA">
+        </div>
+
+        <h2>Forgot Password?</h2>
+
+        <p>
+            Enter your GE DATA account email and we will send you a password reset link.
+        </p>
+
+        <div class="forgotPasswordInputBox">
+
+            <i class="fa-solid fa-envelope"></i>
+
+            <input
+                type="email"
+                id="forgotPasswordEmail"
+                placeholder="Enter your email"
+                autocomplete="email"
+            >
+
+        </div>
+
+        <small id="forgotPasswordError"></small>
+
+        <button
+            type="button"
+            id="sendResetLinkBtn"
+            class="mainBtn">
+
+            Send Reset Link
+
+        </button>
+
+        <button
+            type="button"
+            id="cancelForgotPasswordBtn"
+            class="cancelForgotPasswordBtn">
+
+            Cancel
+
+        </button>
+
+    </div>
+
+</div>
+
 <script src="auth.js"></script>
 
 </body>
