@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GE DATA - Authentication</title>
+
+<link rel="stylesheet" href="auth.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="authContainer">
+
+    <div class="logoBox">
+
+        <img src="logo.png" class="logo">
+
+        <h2>GE DATA</h2>
+
+        <p>Fast & Secure VTU Platform</p>
+
+    </div>
+
+    <div class="authTabs">
+
+        <button id="loginTab" class="active">
+            Login
+        </button>
+
+        <button id="signupTab">
+            Register
+        </button>
+
+    </div>
+
+    <!-- LOGIN -->
+
+    <form id="loginForm" class="authForm">
+
+        <h1>Welcome Back</h1>
+
+        <p>Login to continue</p>
+
+        <div class="inputBox">
+
+            <i class="fa-solid fa-user"></i>
+
+            <input
+            type="text"
+            id="loginEmail"
+            placeholder="Email or Username">
+
+        </div>
+
+        <div class="inputBox">
+
+            <i class="fa-solid fa-lock"></i>
+
+            <input
+            type="password"
+            id="loginPassword"
+            placeholder="Password">
+
+            <i class="fa-solid fa-eye eye"
+            id="loginEye"></i>
+
+        </div>
+
+        <a href="#" class="forgot">
+            Forgot Password?
+        </a>
+
+        <button
+        type="button"
+        id="loginBtn"
+        class="mainBtn">
+
+            Login
+
+        </button>
+
+        <div class="divider">
+
+            <span>OR</span>
+
+        </div>
+
+        <button
+        type="button"
+        class="googleBtn">
+
+            <img src="google.png">
+
+            Continue with Google
+
+        </button>
+       <button
+    type="button"
+    id="showPinLogin"
+    class="googleBtn">
+
+    Login with PIN
+
+</button>
+
+    </form>
+
+   <!-- LOGIN WITH PIN -->
+
+<div id="pinLoginBox" class="authForm" style="display:none;">
+
+    <h1>Login with PIN</h1>
+
+    <p>Enter your 4-digit PIN to continue</p>
+
+    <div class="inputBox">
+
+        <i class="fa-solid fa-user"></i>
+
+        <input
+            type="text"
+            id="pinLoginEmail"
+            placeholder="Email or Username"
+            autocomplete="username">
+
+    </div>
+
+    <div class="inputBox">
+
+        <i class="fa-solid fa-lock"></i>
+
+        <input
+            type="password"
+            id="loginPin"
+            placeholder="4-digit PIN"
+            maxlength="4"
+            inputmode="numeric"
+            autocomplete="off">
+
+    </div>
+
+    <button
+        type="button"
+        id="pinLoginBtn"
+        class="mainBtn">
+
+        Login with PIN
+
+    </button>
+
+    <button
+        type="button"
+        id="backToPasswordLogin"
+        class="googleBtn">
+
+        Login with Password
+
+    </button>
+
+</div>
+
+
+    <!-- SIGNUP -->
+
+    <form
+    id="signupForm"
+    class="authForm"
+    style="display:none;">
+
+        <h1>Create Account</h1>
+
+        <p>Create your GE DATA account</p>
+
+        <div class="inputBox">
+
+            <i class="fa-solid fa-user"></i>
+
+            <input
+            type="text"
+            id="fullname"
+            placeholder="Full Name">
+
+        </div>
+
+        <div class="inputBox">
+
+            <i class="fa-solid fa-at"></i>
+
+            <input
+            type="text"
+            id="username"
+            placeholder="Username">
+
+        </div>
+
+        <div class="inputBox">
+
+            <i class="fa-solid fa-envelope"></i>
+
+            <input
+            type="email"
+            id="email"
+            placeholder="Email">
+
+        </div>
+
+        <div class="inputBox">
+
+            <i class="fa-solid fa-phone"></i>
+
+            <input
+            type="tel"
+            id="phone"
+            placeholder="Phone Number">
+
+        </div>
+
+        <div class="inputBox">
+
+            <i class="fa-solid fa-lock"></i>
+
+            <input
+            type="password"
+            id="password"
+            placeholder="Password">
+
+        </div>
+
+        <div class="inputBox">
+
+            <i class="fa-solid fa-lock"></i>
+
+            <input
+            type="password"
+            id="confirmPassword"
+            placeholder="Confirm Password">
+
+        </div>
+
+        <div class="inputBox">
+
+            <i class="fa-solid fa-gift"></i>
+
+            <input
+            type="text"
+            id="referral"
+            placeholder="Referral Code (Optional)">
+
+        </div>
+
+        <button
+        type="button"
+        id="signupBtn"
+        class="mainBtn">
+
+            Create Account
+
+        </button>
+
+    
+
+    </form>
+
+</div>
+
+<!-- ============================= -->
+<!-- CUSTOM ALERT CARD -->
+<!-- ============================= -->
+
+<div id="customAlert" class="customAlert">
+
+    <div class="customAlertIcon" id="customAlertIcon">
+        <i class="fa-solid fa-circle-check"></i>
+    </div>
+
+    <div class="customAlertContent">
+        <h3 id="customAlertTitle">Success</h3>
+        <p id="customAlertMessage"></p>
+    </div>
+
+    <button
+        type="button"
+        class="customAlertClose"
+        id="customAlertClose">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+
+</div>
+
+<!-- ================= SPLASH SCREEN ================= -->
+
+<div id="splashScreen">
+
+    <div class="splashContent">
+
+        <div class="splashLogo">
+            <img src="logo.png" alt="GE DATA">
+        </div>
+
+        <h1>GE DATA</h1>
+
+        <p>GlobalExpress Good and safe</p>
+
+        <div class="splashLoader">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= FORGOT PASSWORD MODAL ================= -->
+
+<div id="forgotPasswordModal" class="forgotPasswordModal">
+
+    <div class="forgotPasswordBox">
+
+        <div class="forgotPasswordLogo">
+            <img src="logo.png" alt="GE DATA">
+        </div>
+
+        <h2>Forgot Password?</h2>
+
+        <p>
+            Enter your GE DATA account email and we will send you a password reset link.
+        </p>
+
+        <div class="forgotPasswordInputBox">
+
+            <i class="fa-solid fa-envelope"></i>
+
+            <input
+                type="email"
+                id="forgotPasswordEmail"
+                placeholder="Enter your email"
+                autocomplete="email"
+            >
+
+        </div>
+
+        <small id="forgotPasswordError"></small>
+
+        <button
+            type="button"
+            id="sendResetLinkBtn"
+            class="mainBtn">
+
+            Send Reset Link
+
+        </button>
+
+        <button
+            type="button"
+            id="cancelForgotPasswordBtn"
+            class="cancelForgotPasswordBtn">
+
+            Cancel
+
+        </button>
+
+    </div>
+
+</div>
+
+<script src="auth.js"></script>
+
+</body>
+</html>

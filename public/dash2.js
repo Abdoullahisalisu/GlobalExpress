@@ -12,6 +12,36 @@ function getAuthToken(){
 }
 
 // ==========================================
+// DASHBOARD RETURN PROCESSING
+// ==========================================
+
+function showDashboardReturnProcessing() {
+
+    const processing =
+        document.getElementById("dashboardReturnProcessing");
+
+    if (!processing) return;
+
+    processing.classList.add("show");
+
+    // Prevent scrolling while processing
+    document.body.style.overflow = "hidden";
+}
+
+
+function hideDashboardReturnProcessing() {
+
+    const processing =
+        document.getElementById("dashboardReturnProcessing");
+
+    if (!processing) return;
+
+    processing.classList.remove("show");
+
+    document.body.style.overflow = "";
+}
+
+// ==========================================
 // CHECK LOGIN SESSION
 // ==========================================
 
@@ -317,11 +347,16 @@ function openPage(page, addHistory = true) {
 
     // Save page in browser history
     if (addHistory) {
-        history.pushState({ page: page }, "", "#" + page);
+        history.pushState(
+            { page: page },
+            "",
+            "#" + page
+        );
     }
 
     // Hide Dashboard
-    const homePage = document.getElementById("homePage");
+    const homePage =
+        document.getElementById("homePage");
 
     if (homePage) {
         homePage.style.display = "none";
@@ -333,46 +368,94 @@ function openPage(page, addHistory = true) {
     });
 
     // Show selected page
-    const targetPage = document.getElementById(page);
+    const targetPage =
+        document.getElementById(page);
 
     if (targetPage) {
         targetPage.style.display = "block";
     }
-}
+
+} // ✅ KAR KA MANTA WANNAN
+
 
 function goHome() {
 
-    // Hide all pages
+    // ==========================================
+    // SHOW DASHBOARD RETURN PROCESSING
+    // ==========================================
+
+    showDashboardReturnProcessing();
+
+
+    // ==========================================
+    // HIDE ALL PAGES
+    // ==========================================
+
     document.querySelectorAll(".page").forEach(page => {
         page.style.display = "none";
     });
-     
-     
 
-    // Show Home page
-    const homePage = document.getElementById("homePage");
+
+    // ==========================================
+    // SHOW HOME PAGE
+    // ==========================================
+
+    const homePage =
+        document.getElementById("homePage");
 
     if (homePage) {
         homePage.style.display = "block";
     }
 
-    // Remove active state from all navigation items
+
+    // ==========================================
+    // REMOVE ACTIVE STATE
+    // ==========================================
+
     document.querySelectorAll(".navItem").forEach(item => {
         item.classList.remove("active");
     });
 
-    // Activate Dashboard/Home icon
-    const homeNav = document.getElementById("homeNav");
+
+    // ==========================================
+    // ACTIVATE HOME ICON
+    // ==========================================
+
+    const homeNav =
+        document.getElementById("homeNav");
 
     if (homeNav) {
         homeNav.classList.add("active");
     }
 
-        // Refresh app after returning to Dashboard
-    setTimeout(() => {
-        window.location.reload();
-    }, 100);
+
+    // ==========================================
+    // REFRESH DASHBOARD DATA
+    // ==========================================
+
+    Promise.all([
+        loadCurrentUser(),
+        loadHistory()
+    ])
+    .catch(error => {
+
+        console.error(
+            "Dashboard refresh error:",
+            error
+        );
+
+    })
+    .finally(() => {
+
+        setTimeout(() => {
+
+            hideDashboardReturnProcessing();
+
+        }, 500);
+
+    });
 }
+
 // ================= PHONE INPUT =================
 
 const phoneInput = document.getElementById("phoneNumber");
