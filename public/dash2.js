@@ -381,24 +381,29 @@ function openPage(page, addHistory = true) {
 function goHome() {
 
     // ==========================================
-    // SHOW DASHBOARD RETURN PROCESSING
+    // MARK DASHBOARD RETURN
+    // ==========================================
+
+    sessionStorage.setItem(
+        "dashboardReturning",
+        "true"
+    );
+
+
+    // ==========================================
+    // SHOW PROCESSING BEFORE REFRESH
     // ==========================================
 
     showDashboardReturnProcessing();
 
 
     // ==========================================
-    // HIDE ALL PAGES
+    // SHOW HOME
     // ==========================================
 
     document.querySelectorAll(".page").forEach(page => {
         page.style.display = "none";
     });
-
-
-    // ==========================================
-    // SHOW HOME PAGE
-    // ==========================================
 
     const homePage =
         document.getElementById("homePage");
@@ -409,17 +414,12 @@ function goHome() {
 
 
     // ==========================================
-    // REMOVE ACTIVE STATE
+    // ACTIVE HOME NAV
     // ==========================================
 
     document.querySelectorAll(".navItem").forEach(item => {
         item.classList.remove("active");
     });
-
-
-    // ==========================================
-    // ACTIVATE HOME ICON
-    // ==========================================
 
     const homeNav =
         document.getElementById("homeNav");
@@ -430,31 +430,66 @@ function goHome() {
 
 
     // ==========================================
-    // REFRESH DASHBOARD DATA
+    // REFRESH
     // ==========================================
 
-    Promise.all([
-        loadCurrentUser(),
-        loadHistory()
-    ])
-    .catch(error => {
+    setTimeout(() => {
+
+        window.location.reload();
+
+    }, 100);
+}
+
+// ==========================================
+// DASHBOARD RETURN PROCESSING AFTER REFRESH
+// ==========================================
+
+document.addEventListener("DOMContentLoaded", async () => {
+
+    const returning =
+        sessionStorage.getItem("dashboardReturning");
+
+    if (!returning) {
+        return;
+    }
+
+    // Remove flag immediately
+    sessionStorage.removeItem(
+        "dashboardReturning"
+    );
+
+
+    // Show processing
+    showDashboardReturnProcessing();
+
+
+    try {
+
+        // Reload fresh dashboard data
+        await Promise.all([
+            loadCurrentUser(),
+            loadHistory()
+        ]);
+
+    } catch (error) {
 
         console.error(
             "Dashboard refresh error:",
             error
         );
 
-    })
-    .finally(() => {
+    } finally {
 
+        // Give dashboard a moment to finish rendering
         setTimeout(() => {
 
             hideDashboardReturnProcessing();
 
         }, 500);
 
-    });
-}
+    }
+
+});
 
 // ================= PHONE INPUT =================
 
