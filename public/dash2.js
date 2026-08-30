@@ -1040,12 +1040,55 @@ if (buyButton) {
 
 // ================= CLOSE SUCCESS =================
 
-function closeSuccess(){
+function closeSuccess() {
 
-document.getElementById("successModal").style.display="none";
+    // Close success modal
+    const successModal =
+        document.getElementById("successModal");
 
-goHome();
+    if (successModal) {
+        successModal.style.display = "none";
+        successModal.classList.remove("show");
+    }
 
+    // Clear selected data purchase
+    selectedNetwork = "";
+    selectedCategory = "";
+    selectedPlanId = "";
+    selectedPlanName = "";
+    selectedPlanPrice = 0;
+    selectedPlanValidity = "";
+    selectedPlanType = "";
+
+    // Clear phone number
+    const phoneInput =
+        document.getElementById("phoneNumber");
+
+    if (phoneInput) {
+        phoneInput.value = "";
+    }
+
+    // Hide/reset data sections
+    const categorySection =
+        document.getElementById("categorySection");
+
+    const plansSection =
+        document.getElementById("plansSection");
+
+    if (categorySection) {
+        categorySection.style.display = "none";
+    }
+
+    if (plansSection) {
+        plansSection.style.display = "none";
+    }
+
+    // Reset network selection
+    document.querySelectorAll(".networkCard").forEach(card => {
+        card.classList.remove("selected", "active");
+    });
+
+    // Stay on Data page
 }
 
 // ================= BOTTOM NAVIGATION =================
@@ -2995,8 +3038,33 @@ if (airtimeSuccessModal) {
 
 if (airtimeSuccessDone) {
     airtimeSuccessDone.onclick = () => {
-    window.location.reload();
-  };
+
+        // Close success modal
+        const airtimeSuccessModal =
+            document.getElementById("airtimeSuccessModal");
+
+        if (airtimeSuccessModal) {
+            airtimeSuccessModal.style.display = "none";
+            airtimeSuccessModal.classList.remove("show");
+        }
+
+        // Clear airtime purchase details
+        const airtimePhone =
+            document.getElementById("airtimePhone");
+
+        const airtimeAmount =
+            document.getElementById("airtimeAmount");
+
+        if (airtimePhone) {
+            airtimePhone.value = "";
+        }
+
+        if (airtimeAmount) {
+            airtimeAmount.value = "";
+        }
+
+        // Stay on Airtime page
+    };
 }
     
 

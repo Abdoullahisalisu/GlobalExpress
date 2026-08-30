@@ -5602,12 +5602,6 @@ body.dark #clearHistorySearch {
 
     position: relative;
     z-index: 2;
-
-    animation:
-        dashboardLogoPulse
-        1.2s
-        infinite
-        ease-in-out;
 }
 
 
@@ -5615,27 +5609,6 @@ body.dark #clearHistorySearch {
    SPINNER AROUND LOGO
 ========================================== */
 
-.dashboardReturnSpinner {
-    position: absolute;
-
-    inset: 0;
-
-    width: 72px;
-    height: 72px;
-
-    border-radius: 50%;
-
-    border: 3px solid rgba(246, 196, 51, 0.20);
-
-    border-top-color: #F6C433;
-    border-right-color: #F6C433;
-
-    animation:
-        dashboardReturnSpin
-        0.9s
-        linear
-        infinite;
-}
 
 
 /* ==========================================
