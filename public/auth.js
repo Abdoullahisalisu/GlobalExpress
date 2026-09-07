@@ -42,6 +42,57 @@ if (
 }
 
 const signupForm = document.getElementById("signupForm");
+  
+// ================================
+// GE DATA AUTH ALERT
+// ================================
+
+function showAuthAlert(type, message) {
+
+    const oldAlert = document.getElementById("geAuthAlert");
+
+    if (oldAlert) {
+        oldAlert.remove();
+    }
+
+    const alertBox = document.createElement("div");
+
+    alertBox.id = "geAuthAlert";
+
+    const isSuccess = type === "success";
+
+    alertBox.className =
+        isSuccess
+            ? "geAuthAlert success"
+            : "geAuthAlert error";
+
+    alertBox.innerHTML = `
+        <div class="geAuthAlertIcon">
+            <i class="fa-solid ${isSuccess ? "fa-check" : "fa-xmark"}"></i>
+        </div>
+
+        <div class="geAuthAlertContent">
+            <strong>${isSuccess ? "Success" : "Error"}</strong>
+            <span>${message}</span>
+        </div>
+    `;
+
+    document.body.appendChild(alertBox);
+
+    setTimeout(() => {
+        alertBox.classList.add("show");
+    }, 10);
+
+    setTimeout(() => {
+
+        alertBox.classList.remove("show");
+
+        setTimeout(() => {
+            alertBox.remove();
+        }, 300);
+
+    }, 2500);
+}
 
 // ================================
 // OPEN LOGIN
@@ -212,9 +263,11 @@ loginBtn.onclick = async () => {
         JSON.stringify(data.user)
     );
 
-    alert("Login Successful!");
+    showAuthAlert("success", "Login successful!");
 
+    setTimeout(() => {
     window.location.href = "/dash2.html";
+}, 1200);
 
 } else {
 
@@ -338,11 +391,13 @@ signupBtn.onclick = async () => {
 
         if (data.success) {
 
-            alert("Registration Successful!");
+            showAuthAlert("success", "Registration successful!");
 
             signupForm.reset();
 
-            loginTab.click();
+            setTimeout(() => {
+                loginTab.click();
+            }, 1200);
 
         } else {
 
