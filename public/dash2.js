@@ -139,7 +139,7 @@ function updateDashboardUser(user){
     currentBalance = Number(user.balance || 0);
 
     const balanceEl = document.getElementById("balance");
-    if(balanceEl && visible){
+    if(balanceEl){
         balanceEl.innerHTML = formatMoney(currentBalance);
     }
 
